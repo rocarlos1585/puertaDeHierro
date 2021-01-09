@@ -22,6 +22,7 @@ class Directorio extends Component {
           
           <div className="directorioContainer">
             <div class="ui relaxed items">
+              
               <div class="item">
                 <div class="ui small image">
                   <img src="https://firebasestorage.googleapis.com/v0/b/puertahierro-67dce.appspot.com/o/andaluciaCard.jpg?alt=media&token=8ef46322-ca7d-4939-9008-63fb772a5a9d"/>

@@ -43,14 +43,14 @@ render() {
           <Fade right>
             <h1>Misión</h1>
           </Fade>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed lectus nisl. Vivamus a commodo ligula, sed pulvinar nunc. Aliquam finibus felis eget sodales dapibus. Ut dictum elit justo, ut bibendum ipsum malesuada in. </p>
+          <p>Buscar la mejora continua en la calidad de vida de los residentes de Puerta de Hierro.</p>
         </div>
 
         <div className="visionContainer">
           <Fade left>
             <h1>Visión</h1>
           </Fade>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed lectus nisl. Vivamus a commodo ligula, sed pulvinar nunc. Aliquam finibus felis eget sodales dapibus. Ut dictum elit justo, ut bibendum ipsum malesuada in. </p>
+          <p>Ser un referente para los Fraccionamientos a nivel Nacional en Seguridad, Mantenimiento y Jardineria. Desarrollar proyectos innovadores y prestar servicios de calidad. Construir una organizacion eficiente y transparente formada por profesionales y buscar la mejora continua de nuestros servicios.</p>
         </div>
 
       </div>
