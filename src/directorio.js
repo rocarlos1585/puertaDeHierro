@@ -12,6 +12,9 @@ class Directorio extends Component {
       <div>
 
         <Menu>
+            <div>
+              <img className="logoMenu" src="https://firebasestorage.googleapis.com/v0/b/puertahierro-67dce.appspot.com/o/logoPuerta2.png?alt=media&token=ed22f2a2-5a78-4140-91f4-2adc401ab920"/>
+            </div>
             <a id="home" className="menu-item" href="/">Inicio</a>
             <a id="home" className="menu-item" href="/">Reglamentos</a>
             <a id="about" className="menu-item" href="/">Portal de Residente</a>
@@ -22,6 +25,51 @@ class Directorio extends Component {
           
           <div className="directorioContainer">
             <div class="ui relaxed items">
+
+            <div class="item">
+                <div class="ui small image">
+                  <img src="https://react.semantic-ui.com/images/wireframe/image.png"/>
+                </div>
+                <div class="middle aligned content">
+                  <div class="header">GERENCIA</div>
+                  <div class="description">
+                    <p>Caja: <a href="tel:3323019805"> <i aria-hidden="true" class="call icon"></i> (33)23-01-98-05</a> ext:102</p>
+                    <p>Asistente de Gerencia: <a href="tel:3323019803"> <i aria-hidden="true" class="call icon"></i> (33)23-01-98-03</a> ext:100</p>
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="item">
+                <div class="ui small image">
+                  <img src="https://react.semantic-ui.com/images/wireframe/image.png"/>
+                </div>
+                <div class="middle aligned content">
+                  <div class="header">INGRESO ACUEDUCTO</div>
+                  <div class="description">
+                    <p>peatonal: <a href="tel:3323019815"> <i aria-hidden="true" class="call icon"></i> (33)23-01-98-15</a> ext:208</p>
+                    <p>vehicular 1: <a href="tel:3323019812"> <i aria-hidden="true" class="call icon"></i> (33)23-01-98-12</a> ext:205</p>
+                    <p>vehicular 2: <a href="tel:3323019813"> <i aria-hidden="true" class="call icon"></i> (33)23-01-98-13</a> ext:206</p>
+                  </div>
+
+                </div>
+              </div>
+
+
+              <div class="item">
+                <div class="ui small image">
+                  <img src="https://react.semantic-ui.com/images/wireframe/image.png"/>
+                </div>
+                <div class="middle aligned content">
+                  <div class="header">INGRESO PATRIA</div>
+                  <div class="description">
+                    <p>peatonal: <a href="tel:3323019825"> <i aria-hidden="true" class="call icon"></i> (33)23-01-98-25</a> ext:218</p>
+                    <p>vehicular 1: <a href="tel:3323019822"> <i aria-hidden="true" class="call icon"></i> (33)23-01-98-22</a> ext:215</p>
+                    <p>vehicular 2: <a href="tel:3323019823"> <i aria-hidden="true" class="call icon"></i> (33)23-01-98-23</a> ext:216</p>
+                  </div>
+
+                </div>
+              </div>
               
               <div class="item">
                 <div class="ui small image">

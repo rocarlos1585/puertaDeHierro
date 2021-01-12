@@ -177,6 +177,10 @@
 .bm-burger-bars-hover {
   background: #926123;
 }
+
+.logoMenu{
+  width: 70%;
+}
  
 /* Position and sizing of clickable cross button */
 .bm-cross-button {
