@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import {Route, HashRouter, BrowserRouter, Switch,Router} from 'react-router-dom'
 
-import App from './App.js';
+import App2 from './App.js';
 import Directorio from './directorio.js'
+import App from './landing.js'
 
 
 
@@ -12,12 +13,13 @@ class RouterPrincipal extends Component {
       <div>
         <BrowserRouter>
           <Switch>
-            <Route exact path="/" component={App}/>
+            <Route exact path="/" component={App2}/>
             <Route path="/directorio" component={Directorio}/>
-            <Route path="/reglamentos" component={App}/>
-            <Route path="/portalResidentes" component={App}/>
-            <Route path="/obras" component={App}/>
-            <Route path="/galeria" component={App}/>
+            <Route path="/reglamentos" component={App2}/>
+            <Route path="/portalResidentes" component={App2}/>
+            <Route path="/obras" component={App2}/>
+            <Route path="/galeria" component={App2}/>
+            <Route path="/landing" component={App}/>
           </Switch>
         </BrowserRouter>
       </div>

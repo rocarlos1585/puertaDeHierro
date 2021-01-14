@@ -10,7 +10,7 @@ import video from './video/videoWeb.mp4';
 
 
 
-class App extends Component{
+class App2 extends Component{
 
 
 render() {
@@ -29,13 +29,13 @@ render() {
       </Menu>
 
       <div className="logoContainer">
+        
+        <video className="videoContainer" src="https://firebasestorage.googleapis.com/v0/b/puertahierro-67dce.appspot.com/o/videoWeb.mp4?alt=media&token=eef02aa8-6520-40be-a954-cc53340676c2" autoPlay muted loop type="video/mp4"></video>
         <img className="logoPuerta" src="https://firebasestorage.googleapis.com/v0/b/puertahierro-67dce.appspot.com/o/logoPuerta2.png?alt=media&token=ed22f2a2-5a78-4140-91f4-2adc401ab920" />
         <img className="scrollGif" src="https://firebasestorage.googleapis.com/v0/b/puertahierro-67dce.appspot.com/o/scroll-gif-1.gif?alt=media&token=29475b5a-9526-4b05-988b-df9020b72066"/>
       </div>
 
-      <div className="videoContainer">
-        <video autoPlay muted loop src="https://firebasestorage.googleapis.com/v0/b/puertahierro-67dce.appspot.com/o/videoWeb.mp4?alt=media&token=eef02aa8-6520-40be-a954-cc53340676c2" type="video/mp4"/>
-      </div>
+
 
       <div className="misionVision">
 
@@ -59,43 +59,44 @@ render() {
         <h1>Servicios</h1>
 
         <div className="serviciosGridContainer">
+
           <div class="img__wrap">
-            <img class="img__img" src="http://placehold.it/257x200.jpg" />
+            <img class="img__img" src="" />
             <div class="img__description_layer">
               <p class="img__description">Plaza Comercial</p>
             </div>
           </div>
 
           <div class="img__wrap">
-            <img class="img__img" src="http://placehold.it/257x200.jpg" />
+            <img class="img__img" src="" />
             <div class="img__description_layer">
               <p class="img__description">Mantenimiento</p>
             </div>
           </div>
 
           <div class="img__wrap">
-            <img class="img__img" src="http://placehold.it/257x200.jpg" />
+            <img class="img__img" src="https://firebasestorage.googleapis.com/v0/b/puertahierro-67dce.appspot.com/o/seguridadCard.jpg?alt=media&token=beec1424-4067-49b2-afbc-e7b89cebeb40" />
             <div class="img__description_layer">
               <p class="img__description">Vigilancia</p>
             </div>
           </div>
 
           <div class="img__wrap">
-            <img class="img__img" src="http://placehold.it/257x200.jpg" />
+            <img class="img__img" src="" />
             <div class="img__description_layer">
               <p class="img__description">Recreación</p>
             </div>
           </div>
 
           <div class="img__wrap">
-            <img class="img__img" src="http://placehold.it/257x200.jpg" />
+            <img class="img__img" src="" />
             <div class="img__description_layer">
               <p class="img__description">This image looks super neat.</p>
             </div>
           </div>
 
           <div class="img__wrap">
-            <img class="img__img" src="http://placehold.it/257x200.jpg" />
+            <img class="img__img" src="" />
             <div class="img__description_layer">
               <p class="img__description">This image looks super neat.</p>
             </div>
@@ -114,4 +115,4 @@ render() {
 
 }
 
-export default App;
+export default App2;
