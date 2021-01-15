@@ -65,28 +65,31 @@ function App() {
     <div className="container">
 
       <div className="padding-block" style={{ height: '100vh' }}>
-        <h2>Puerta de Hierro AC</h2>
+        <video className="videoContainer2" src="https://firebasestorage.googleapis.com/v0/b/puertahierro-67dce.appspot.com/o/videoWeb.mp4?alt=media&token=eef02aa8-6520-40be-a954-cc53340676c2" autoPlay muted loop type="video/mp4"></video>
+        <img className="logoPuerta" src="https://firebasestorage.googleapis.com/v0/b/puertahierro-67dce.appspot.com/o/logoPuerta2.png?alt=media&token=ed22f2a2-5a78-4140-91f4-2adc401ab920" />
+        <img className="scrollGif" src="https://firebasestorage.googleapis.com/v0/b/puertahierro-67dce.appspot.com/o/scroll-gif-1.gif?alt=media&token=29475b5a-9526-4b05-988b-df9020b72066"/>
+
       </div>
 
       <ScrollCarousel>
 
         <div className="box">
-          <img src="https://picsum.photos/720/540/?image=88" alt="" className="img" />
+          <h1>Misión</h1>
+
+          <p>Buscar la mejora continua en la calidad de vida de los residentes de Puerta de Hierro.</p>
         </div>
 
         <div className="box box--narrower">
-          <h1>HOLA</h1>
+          <h1>visión</h1>
+          <p>Ser un referente para los Fraccionamientos a nivel Nacional en Seguridad, Mantenimiento y Jardineria. Desarrollar proyectos innovadores y prestar servicios de calidad. Construir una organizacion eficiente y transparente formada por profesionales y buscar la mejora continua de nuestros servicios.</p>
+
         </div>
 
-        <div className="box">
-          <img src="https://picsum.photos/720/540/?image=472" alt="" className="img" />
-        </div>
+
 
       </ScrollCarousel>
 
-      <div className="padding-block" style={{ height: '100vh' }}>
-        <h2>Fin del contenido</h2>
-      </div>
+
 
     </div>
   )

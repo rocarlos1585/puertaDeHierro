@@ -56,6 +56,15 @@
   opacity: 0.5;
 }
 
+.videoContainer2{
+  width: 100%;
+  height: 100vh;
+  object-fit: cover ;
+  position: absolute;
+
+  opacity: 0.5;
+}
+
 .imgCarousel{
   width: 100%;
   height: 100vh;
@@ -276,11 +285,9 @@ Note: Beware of modifying this element as it can break the animations - you shou
 
 
 .padding-block {
-  display: flex;
-  text-align: center;
+  position: relative;
   font-size: 5vmax;
-  justify-content: center;
-  align-items: center;
+
   background-color: #efefef;
   color: #333;
 }
@@ -293,6 +300,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
   position: sticky;
   top: 0;
   overflow: hidden;
+  background-color: blue;
 }
 
 .transform-box {
@@ -304,13 +312,15 @@ Note: Beware of modifying this element as it can break the animations - you shou
   flex-shrink: 0;
   /* need to hardcode box sizes, else images loading throws off calculations */
   /* could be a job for imagesLoaded */
-  width: 70rem;
+  width: 100%;
   height: 100vh;
-  margin: 0 2rem;
+  margin: 0 5rem;
+  text-align: center;
+  background-color: red;
 }
 
 .box--narrower {
-  width: 70rem;
+  width: 100%;
 }
 
 .img {

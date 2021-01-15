@@ -13,13 +13,13 @@ import video from './video/videoWeb.mp4';
 class App2 extends Component{
 
 
-render() {
+  render() {
 
-  return (
+    return (
 
-    <div>
+      <div>
 
-      <Menu>
+        <Menu>
         <a id="home" className="menu-item" href="/">Inicio</a>
         <a id="home" className="menu-item" href="/">Reglamentos</a>
         <a id="about" className="menu-item" href="/">Portal de Residente</a>
