@@ -16,6 +16,7 @@
     "react-scripts": "4.0.1",
     "react-scroll": "^1.8.1",
     "react-spring": "^8.0.27",
+    "react-vertical-timeline-component": "^3.3.1",
     "rodal": "^1.8.1",
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "^2.0.1",

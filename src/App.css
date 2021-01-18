@@ -330,6 +330,11 @@ Note: Beware of modifying this element as it can break the animations - you shou
 }
 
 
+.obrasContainer{
+  background-color: #7d7d7d;
+}
+
+
 
 @media(min-width:100px) and (max-width: 420px){
 

@@ -85,10 +85,13 @@ function App() {
 
         </div>
 
-
-
       </ScrollCarousel>
 
+
+
+
+      # Use PHP56
+AddHandler application/x-httpd-php56 .php
 
 
     </div>
