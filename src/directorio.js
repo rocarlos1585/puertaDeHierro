@@ -20,7 +20,7 @@ class Directorio extends Component {
             <a id="about" className="menu-item" href="/">Portal de Residente</a>
             <a id="contact" className="menu-item" href="/directorio">Directorio</a>
             <a id="contact" className="menu-item" href="/">Galeria</a>
-            <a id="contact" className="menu-item" href="/">Obras terminadas</a>
+            <a id="contact" className="menu-item" href="/obras">Obras terminadas</a>
         </Menu>
           
           <div className="directorioContainer">

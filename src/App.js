@@ -25,7 +25,7 @@ class App2 extends Component{
         <a id="about" className="menu-item" href="/">Portal de Residente</a>
         <a id="contact" className="menu-item" href="/directorio">Directorio</a>
         <a id="contact" className="menu-item" href="/">Galeria</a>
-        <a id="contact" className="menu-item" href="/">Obras terminadas</a>
+        <a id="contact" className="menu-item" href="/obras">Obras terminadas</a>
       </Menu>
 
       <div className="logoContainer">
@@ -55,58 +55,6 @@ class App2 extends Component{
 
       </div>
 
-      <div className="servicios">
-        <h1>Servicios</h1>
-
-        <div className="serviciosGridContainer">
-
-          <div class="img__wrap">
-            <img class="img__img" src="" />
-            <div class="img__description_layer">
-              <p class="img__description">Plaza Comercial</p>
-            </div>
-          </div>
-
-          <div class="img__wrap">
-            <img class="img__img" src="" />
-            <div class="img__description_layer">
-              <p class="img__description">Mantenimiento</p>
-            </div>
-          </div>
-
-          <div class="img__wrap">
-            <img class="img__img" src="https://firebasestorage.googleapis.com/v0/b/puertahierro-67dce.appspot.com/o/seguridadCard.jpg?alt=media&token=beec1424-4067-49b2-afbc-e7b89cebeb40" />
-            <div class="img__description_layer">
-              <p class="img__description">Vigilancia</p>
-            </div>
-          </div>
-
-          <div class="img__wrap">
-            <img class="img__img" src="" />
-            <div class="img__description_layer">
-              <p class="img__description">Recreación</p>
-            </div>
-          </div>
-
-          <div class="img__wrap">
-            <img class="img__img" src="" />
-            <div class="img__description_layer">
-              <p class="img__description">This image looks super neat.</p>
-            </div>
-          </div>
-
-          <div class="img__wrap">
-            <img class="img__img" src="" />
-            <div class="img__description_layer">
-              <p class="img__description">This image looks super neat.</p>
-            </div>
-          </div>
-
-
-        </div>
-        
-
-      </div>
 
 
     </div>
