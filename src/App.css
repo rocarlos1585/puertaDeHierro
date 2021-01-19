@@ -335,6 +335,21 @@ Note: Beware of modifying this element as it can break the animations - you shou
 }
 
 
+.imagesContainer{
+  width: 100%;
+  display: flex;
+}
+
+.imagesContainer img{ 
+  width: 110px;
+  margin:5px;
+  transition: transform .2s;
+}
+
+.imagesContainer img:hover {
+  transform: scale(2.0); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
 
 @media(min-width:100px) and (max-width: 420px){
 
