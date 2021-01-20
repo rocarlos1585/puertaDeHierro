@@ -257,20 +257,23 @@ Note: Beware of modifying this element as it can break the animations - you shou
 .menu-item{
   color:white;
   font-family: "RoundHand1";
-  font-size: 30px;
+  font-size: 25px;
   border:none;
   text-decoration: none;
   outline: none;
   margin:5%;
 }
 
+.menu-item:hover{
+  color:#b8b7ad;
+}
 
 
 
 .directorioContainer{
   width: 100%;
   padding: 5%;
-  background-color: ;
+  background-color: #333;
 }
 
 .header{
@@ -278,6 +281,10 @@ Note: Beware of modifying this element as it can break the animations - you shou
   font-family: "RoundHand1"!important;
 }
 
+
+.description{
+  color:white!important;
+}
 
 
 
@@ -348,6 +355,44 @@ Note: Beware of modifying this element as it can break the animations - you shou
 
 .imagesContainer img:hover {
   transform: scale(2.0); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+.reglamentosContainer{
+  background: #373a47;
+  height: 100vh;
+}
+
+.documentsContainer{
+  display: flex;
+}
+
+.documentContainer{
+  margin:5%;
+  width: 50%;
+  text-align: center;
+}
+
+.documentContainer img{
+  width: 30%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.documentContainer h1{
+  color:white;
+  font-size: 3.5vh;
+  margin: 5%;
+}
+
+.documentContainer a{
+  margin:5%;
+  color:white;
+
+}
+
+.documentContainer a:hover{
+  color:#926123
 }
 
 
@@ -455,6 +500,31 @@ Note: Beware of modifying this element as it can break the animations - you shou
 
   .img__wrap:hover .img__description {
     transform: translateY(0);
+  }
+
+
+
+  .documentsContainer{
+    display: block;
+  }
+
+  .documentContainer{
+    margin:0%;
+    margin-bottom: 30%;
+    width: 100%;
+    text-align: center;
+  }
+
+  .documentContainer h1{
+    color:white;
+    font-size: 2vh;
+    margin: 0%;
+  }
+  
+  .documentContainer a{
+    margin:5%;
+    color:white;
+  
   }
 
 }

@@ -5,6 +5,8 @@ import App2 from './App.js';
 import Directorio from './directorio.js'
 import App from './landing.js'
 import Obras from './obras.js';
+import Reglamentos from './reglamentos.js';
+import PortalResidentes from './portalResidente.js';
 
 
 
@@ -16,8 +18,8 @@ class RouterPrincipal extends Component {
           <Switch>
             <Route exact path="/" component={App2}/>
             <Route path="/directorio" component={Directorio}/>
-            <Route path="/reglamentos" component={App2}/>
-            <Route path="/portalResidentes" component={App2}/>
+            <Route path="/reglamentos" component={Reglamentos}/>
+            <Route path="/portalResidentes" component={PortalResidentes}/>
             <Route path="/obras" component={Obras}/>
             <Route path="/galeria" component={App2}/>
             <Route path="/landing" component={App}/>

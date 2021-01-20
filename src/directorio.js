@@ -16,8 +16,8 @@ class Directorio extends Component {
               <img className="logoMenu" src="https://firebasestorage.googleapis.com/v0/b/puertahierro-67dce.appspot.com/o/logoPuerta2.png?alt=media&token=ed22f2a2-5a78-4140-91f4-2adc401ab920"/>
             </div>
             <a id="home" className="menu-item" href="/">Inicio</a>
-            <a id="home" className="menu-item" href="/">Reglamentos</a>
-            <a id="about" className="menu-item" href="/">Portal de Residente</a>
+            <a id="home" className="menu-item" href="/reglamentos">Reglamentos</a>
+            <a id="about" className="menu-item" href="/portalResidentes">Portal de Residente</a>
             <a id="contact" className="menu-item" href="/directorio">Directorio</a>
             <a id="contact" className="menu-item" href="/">Galeria</a>
             <a id="contact" className="menu-item" href="/obras">Obras terminadas</a>
@@ -28,7 +28,7 @@ class Directorio extends Component {
 
             <div class="item">
                 <div class="ui small image">
-                  <img src="https://react.semantic-ui.com/images/wireframe/image.png"/>
+                  <img src="https://firebasestorage.googleapis.com/v0/b/puertahierro-67dce.appspot.com/o/logoPuerta2.png?alt=media&token=ed22f2a2-5a78-4140-91f4-2adc401ab920"/>
                 </div>
                 <div class="middle aligned content">
                   <div class="header">GERENCIA</div>
@@ -42,7 +42,7 @@ class Directorio extends Component {
 
               <div class="item">
                 <div class="ui small image">
-                  <img src="https://react.semantic-ui.com/images/wireframe/image.png"/>
+                  <img src="http://puertadehierroac.com/imagenes/cotos/acueductoCard.jpg"/>
                 </div>
                 <div class="middle aligned content">
                   <div class="header">INGRESO ACUEDUCTO</div>
@@ -58,7 +58,7 @@ class Directorio extends Component {
 
               <div class="item">
                 <div class="ui small image">
-                  <img src="https://react.semantic-ui.com/images/wireframe/image.png"/>
+                  <img src="http://puertadehierroac.com/imagenes/cotos/patriaCard.jpg"/>
                 </div>
                 <div class="middle aligned content">
                   <div class="header">INGRESO PATRIA</div>
@@ -73,7 +73,7 @@ class Directorio extends Component {
               
               <div class="item">
                 <div class="ui small image">
-                  <img src="https://firebasestorage.googleapis.com/v0/b/puertahierro-67dce.appspot.com/o/andaluciaCard.jpg?alt=media&token=8ef46322-ca7d-4939-9008-63fb772a5a9d"/>
+                  <img src="http://puertadehierroac.com/imagenes/cotos/andaluciaCard.jpg"/>
                 </div>
                 <div class="middle aligned content">
                   <div class="header">ANDALUCIA</div>
@@ -90,7 +90,7 @@ class Directorio extends Component {
 
               <div class="item">
                 <div class="ui small image">
-                  <img src="https://firebasestorage.googleapis.com/v0/b/puertahierro-67dce.appspot.com/o/aragonCard.jpg?alt=media&token=a2c89a41-68e2-40c1-bd39-09923e51d47a"/>
+                  <img src="http://puertadehierroac.com/imagenes/cotos/aragonCard.jpg"/>
                 </div>
                 <div class="middle aligned content">
                   <div class="header">ARAGON</div>
@@ -107,7 +107,7 @@ class Directorio extends Component {
 
               <div class="item">
                 <div class="ui small image">
-                  <img src="https://firebasestorage.googleapis.com/v0/b/puertahierro-67dce.appspot.com/o/asturiasCard.jpg?alt=media&token=42d1d69b-4c2c-4c47-bf71-533c01124ba1"/>
+                  <img src="http://puertadehierroac.com/imagenes/cotos/asturiasCard.jpg"/>
                 </div>
                 <div class="middle aligned content">
                   <div class="header">ASTURIAS</div>
@@ -124,7 +124,7 @@ class Directorio extends Component {
 
               <div class="item">
                 <div class="ui small image">
-                  <img src="https://react.semantic-ui.com/images/wireframe/image.png"/>
+                  <img src="http://puertadehierroac.com/imagenes/cotos/canariasCard.jpg"/>
                 </div>
                 <div class="middle aligned content">
                   <div class="header">CANARIAS</div>
@@ -141,7 +141,7 @@ class Directorio extends Component {
 
               <div class="item">
                 <div class="ui small image">
-                  <img src="https://firebasestorage.googleapis.com/v0/b/puertahierro-67dce.appspot.com/o/castillaViejaCard.jpg?alt=media&token=00f8967f-d554-4a4d-8f4a-0a992cad9d06"/>
+                  <img src="http://puertadehierroac.com/imagenes/cotos/castillaViejaCard.jpg"/>
                 </div>
                 <div class="middle aligned content">
                   <div class="header">CASTILLA LA VIEJA</div>
@@ -158,7 +158,7 @@ class Directorio extends Component {
               
               <div class="item">
                 <div class="ui small image">
-                  <img src="https://firebasestorage.googleapis.com/v0/b/puertahierro-67dce.appspot.com/o/castillaNuevaCard.jpg?alt=media&token=3005048b-a89f-4cf6-be5b-c2c50ab2d4bd"/>
+                  <img src="http://puertadehierroac.com/imagenes/cotos/castillaNuevaCard.jpg"/>
                 </div>
                 <div class="middle aligned content">
                   <div class="header">CASTILLA LA NUEVA</div>
@@ -175,7 +175,7 @@ class Directorio extends Component {
 
               <div class="item">
                 <div class="ui small image">
-                  <img src="https://firebasestorage.googleapis.com/v0/b/puertahierro-67dce.appspot.com/o/catalunaCard.jpg?alt=media&token=0cab0f30-afa2-4706-8264-d8c847604bab                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            "/>
+                  <img src="http://puertadehierroac.com/imagenes/cotos/catalunaCard.jpg"/>
                 </div>
                 <div class="middle aligned content">
                   <div class="header">CATALUÑA</div>
@@ -193,7 +193,7 @@ class Directorio extends Component {
 
               <div class="item">
                 <div class="ui small image">
-                  <img src="https://firebasestorage.googleapis.com/v0/b/puertahierro-67dce.appspot.com/o/extremaduraCard.jpg?alt=media&token=118cbb71-b1a3-47bc-8bf5-f146cf884bd9"/>
+                  <img src="http://puertadehierroac.com/imagenes/cotos/extremaduraCard.jpg"/>
                 </div>
                 <div class="middle aligned content">
                   <div class="header">EXTREMADURA</div>
@@ -211,7 +211,7 @@ class Directorio extends Component {
 
               <div class="item">
                 <div class="ui small image">
-                  <img src="https://react.semantic-ui.com/images/wireframe/image.png"/>
+                  <img src="http://puertadehierroac.com/imagenes/cotos/galiciaCard.jpg"/>
                 </div>
                 <div class="middle aligned content">
                   <div class="header">GALICIA</div>
@@ -229,7 +229,7 @@ class Directorio extends Component {
 
               <div class="item">
                 <div class="ui small image">
-                  <img src="https://firebasestorage.googleapis.com/v0/b/puertahierro-67dce.appspot.com/o/leonCard.jpg?alt=media&token=1a945689-a54c-435b-9f5a-a6c85e45aa01"/>
+                  <img src="http://puertadehierroac.com/imagenes/cotos/leonCard.jpg"/>
                 </div>
                 <div class="middle aligned content">
                   <div class="header">LEON</div>
@@ -247,7 +247,7 @@ class Directorio extends Component {
 
               <div class="item">
                 <div class="ui small image">
-                  <img src="https://firebasestorage.googleapis.com/v0/b/puertahierro-67dce.appspot.com/o/mallorcaCard.jpg?alt=media&token=ca2512e3-26af-481f-a170-4c4177ff9ee3"/>
+                  <img src="http://puertadehierroac.com/imagenes/cotos/mallorcaCard.jpg"/>
                 </div>
                 <div class="middle aligned content">
                   <div class="header">MALLORCA</div>
@@ -264,7 +264,7 @@ class Directorio extends Component {
 
               <div class="item">
                 <div class="ui small image">
-                  <img src="https://firebasestorage.googleapis.com/v0/b/puertahierro-67dce.appspot.com/o/murciaCard.jpg?alt=media&token=a0fba2fc-cf0b-465e-9c55-9e5b7267e3da"/>
+                  <img src="http://puertadehierroac.com/imagenes/cotos/murciaCard.jpg"/>
                 </div>
                 <div class="middle aligned content">
                   <div class="header">MURCIA</div>
@@ -281,7 +281,7 @@ class Directorio extends Component {
 
               <div class="item">
                 <div class="ui small image">
-                  <img src="https://firebasestorage.googleapis.com/v0/b/puertahierro-67dce.appspot.com/o/navarraCard.jpg?alt=media&token=a0816791-25c2-46d5-9b37-aa7af394061e"/>
+                  <img src="http://puertadehierroac.com/imagenes/cotos/navarraCard.jpg"/>
                 </div>
                 <div class="middle aligned content">
                   <div class="header">NAVARRA</div>
@@ -298,7 +298,7 @@ class Directorio extends Component {
 
               <div class="item">
                 <div class="ui small image">
-                  <img src="https://firebasestorage.googleapis.com/v0/b/puertahierro-67dce.appspot.com/o/valenciaTenerifeCard.jpg?alt=media&token=1c0e3be8-f7ae-4a26-9642-fdab9c38455f"/>
+                  <img src="http://puertadehierroac.com/imagenes/cotos/valenciaTenerifeCard.jpg"/>
                 </div>
                 <div class="middle aligned content">
                   <div class="header">VALENCIA / TENERIFE</div>
