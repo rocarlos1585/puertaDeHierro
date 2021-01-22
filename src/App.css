@@ -16,6 +16,42 @@
   url(./fonts/Quesha.ttf);
 }
 
+@font-face {
+  font-family: 'antipastoRegular';
+  src:
+  url(./fonts/Antipasto-Pro-Regular-trial.ttf);
+}
+
+@font-face {
+  font-family: 'antipastoLight';
+  src:
+  url(./fonts/Antipasto-Pro-ExtraLight-trial.ttf);
+}
+
+@font-face {
+  font-family: 'antipastoBold';
+  src:
+  url(./fonts/Antipasto-Pro-ExtraBold-trial.ttf);
+}
+
+@font-face {
+  font-family: 'louis';
+  src:
+  url(./fonts/Louis-George.ttf);
+}
+
+@font-face {
+  font-family: 'louis-Light';
+  src:
+  url(./fonts/Louis-George-Light.ttf);
+}
+
+@font-face {
+  font-family: 'louis-Bold';
+  src:
+  url(./fonts/Louis-George-Bold.ttf);
+}
+
 
 
 
@@ -256,8 +292,8 @@ Note: Beware of modifying this element as it can break the animations - you shou
 
 .menu-item{
   color:white;
-  font-family: "RoundHand1";
-  font-size: 25px;
+  font-family: "louis-Bold";
+  font-size: 20px;
   border:none;
   text-decoration: none;
   outline: none;
@@ -278,12 +314,13 @@ Note: Beware of modifying this element as it can break the animations - you shou
 
 .header{
   color:#926123!important;
-  font-family: "RoundHand1"!important;
+  font-family: "louis-Bold"!important;
 }
 
 
 .description{
   color:white!important;
+  font-family: "louis-Light"!important;
 }
 
 
@@ -383,6 +420,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
   color:white;
   font-size: 3.5vh;
   margin: 5%;
+  font-family: "antipastoRegular"!important;
 }
 
 .documentContainer a{
