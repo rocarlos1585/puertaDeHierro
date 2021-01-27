@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
+import {Redirect} from 'react-router-dom';
 import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
 import { Icon } from 'semantic-ui-react'
 import { push as Menu } from 'react-burger-menu'
+import  MenuLog  from './menu.js'
 import 'react-vertical-timeline-component/style.min.css';
 import './App.css';
 
@@ -11,20 +13,12 @@ import './App.css';
 
 class Obras extends Component{
     render() {
-        return (
-            <div className="obrasContainer">
+        if(sessionStorage.getItem("auth")=="true"){
+            return (
+                <div className="obrasContainer">
 
-                <Menu>
-                    <div>
-                    <img className="logoMenu" src="https://firebasestorage.googleapis.com/v0/b/puertahierro-67dce.appspot.com/o/logoPuerta2.png?alt=media&token=ed22f2a2-5a78-4140-91f4-2adc401ab920"/>
-                    </div>
-                    <a id="home" className="menu-item" href="/">Inicio</a>
-                    <a id="home" className="menu-item" href="/reglamentos">Reglamentos</a>
-                    <a id="about" className="menu-item" href="/portalResidentes">Portal de Residente</a>
-                    <a id="contact" className="menu-item" href="/directorio">Directorio</a>
-                    <a id="contact" className="menu-item" href="/">Galeria</a>
-                    <a id="contact" className="menu-item" href="/obras">Obras terminadas</a>
-                </Menu>
+                <MenuLog/>
+
                 <VerticalTimeline>
                     <VerticalTimelineElement
                         className="vertical-timeline-element--work"
@@ -243,7 +237,12 @@ class Obras extends Component{
 
                 </VerticalTimeline>
             </div>
-        );
+            );
+        }else{
+            return(
+               <Redirect to={'/'}/> 
+            ); 
+        }
     }
 }
 
