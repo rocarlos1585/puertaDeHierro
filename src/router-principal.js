@@ -7,7 +7,7 @@ import App from './landing.js'
 import Obras from './obras.js';
 import Reglamentos from './reglamentos.js';
 import PortalResidentes from './portalResidente.js';
-
+import Galeria from './galeria.js';
 
 
 class RouterPrincipal extends Component {
@@ -21,7 +21,7 @@ class RouterPrincipal extends Component {
             <Route path="/reglamentos" component={Reglamentos}/>
             <Route path="/portalResidentes" component={PortalResidentes}/>
             <Route path="/obras" component={Obras}/>
-            <Route path="/galeria" component={App2}/>
+            <Route path="/galeria" component={Galeria}/>
             <Route path="/landing" component={App}/>
           </Switch>
         </BrowserRouter>

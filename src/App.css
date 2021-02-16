@@ -211,9 +211,6 @@
   transform: translateY(0);
 }
 
-::-webkit-scrollbar {
-  display: none;
-}
 
 
 /*MENU*/
@@ -310,6 +307,14 @@ Note: Beware of modifying this element as it can break the animations - you shou
 
 .menu-item:hover{
   color:#b8b7ad;
+}
+
+.logout-link{
+  color: white;
+  cursor: pointer;
+  position: absolute;
+  bottom:0;
+  right: 0;
 }
 
 .logoPuertaLogin{
@@ -432,12 +437,15 @@ Note: Beware of modifying this element as it can break the animations - you shou
 .imagesContainer{
   width: 100%;
   display: flex;
+
+
 }
 
 .imagesContainer img{ 
   width: 110px;
   margin:5px;
   transition: transform .2s;
+  
 }
 
 .imagesContainer img:hover {
@@ -470,17 +478,70 @@ Note: Beware of modifying this element as it can break the animations - you shou
   color:white;
   font-size: 3.5vh;
   margin: 5%;
-  font-family: "antipastoRegular"!important;
 }
 
 .documentContainer a{
   margin:5%;
   color:white;
-
 }
 
 .documentContainer a:hover{
   color:#926123
+}
+
+.consultaSaldoContainer{
+  background-color: #373a47;
+  height:100vh;
+}
+
+.datosCondominoContainer{
+  background-color: red;
+  width: 30%;
+}
+
+.tablaDatos{
+  width: 90%;
+  margin:3%;
+  background-color: ;
+  margin-left: auto;
+  margin-right: auto;
+  border:1px solid red;
+}
+
+.tablaDatos th{
+  text-align: left;
+  border:1px dashed blue;
+}
+
+.tablaDatos tr:nth-child(even) {
+  background-color:#926123;
+  color: white;
+}
+
+.datosTotalContainer{
+  border:solid 2px #926123;
+  border-radius: 5px;
+  padding: 10px;
+  color: white;
+  width:max-content;
+}
+
+.galeriaContainer{
+  background-color: #373a47;
+
+}
+
+.imagenesContainer{
+  padding-top:1%;
+  margin-left: 8%;
+  width: 80%;
+  height: 100vh;
+}
+
+.imagenesContainer h1{
+  font-family:"Heading-Book"!important;
+  color:white!important;
+  font-size: 5vh;
 }
 
 
@@ -562,5 +623,6 @@ Note: Beware of modifying this element as it can break the animations - you shou
     color:white;
   
   }
+
 
 }

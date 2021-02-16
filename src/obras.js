@@ -104,7 +104,7 @@ class Obras extends Component{
                         <h3 className="vertical-timeline-element-title">RENOVACIÓN DE PARQUE VEHICULAR</h3>
                         <h4 className="vertical-timeline-element-subtitle">Obras e Inversión</h4>
                         <p>
-                            Adquisición de vehículos toyota yaris
+                            Adquisición de vehículos Toyota Yaris
                         </p>
 
                         <div className="imagesContainer">
@@ -223,7 +223,7 @@ class Obras extends Component{
                         <h3 className="vertical-timeline-element-title">NUTRIENTES EN ÁRBOLES</h3>
                         <h4 className="vertical-timeline-element-subtitle">Jardineria</h4>
                         <p>
-                            En el mes de junio se aplicaron nutrienes y fertilizantes a todos los árboles.
+                            En el mes de junio se aplicaron nutrientes y fertilizantes a todos los árboles.
                         </p>
 
                         <div className="imagesContainer">
@@ -231,6 +231,142 @@ class Obras extends Component{
                             <img className="" src="http://puertadehierroac.com/imagenes/nutrientesArboles/Imagen69.png"/>
                             <img className="" src="http://puertadehierroac.com/imagenes/nutrientesArboles/Imagen70.png"/>
                             <img className="" src="http://puertadehierroac.com/imagenes/nutrientesArboles/Imagen71.png"/>
+                        </div>
+                    </VerticalTimelineElement>
+
+
+                    <VerticalTimelineElement
+                        className="vertical-timeline-element--work"
+                        contentStyle={{ background: '#24962e', color: 'white' }}
+                        contentArrowStyle={{ borderRight: '7px solid  #24962e' }}
+                        date="2020"
+                        iconStyle= {{background: '#24962e', color: '#fff', textAlign:'center', paddingTop:'1%'}}
+                        icon={<Icon size="big" name='tree' />}
+                    >
+                        <h3 className="vertical-timeline-element-title">PODAS A CASAS ABANDONADAS </h3>
+                        <h4 className="vertical-timeline-element-subtitle">Jardineria</h4>
+                        <p>
+                            Se llevo a cabo la poda en casas abandonadas con cargo a sus cuotas de mantenimiento
+                        </p>
+
+                        <div className="imagesContainer">
+                            <img className="" src="http://puertadehierroac.com/imagenes/podaCasasAbandonadas/Imagen84.png"/>
+                            <img className="" src="http://puertadehierroac.com/imagenes/podaCasasAbandonadas/Imagen85.png"/>
+                        </div>
+                    </VerticalTimelineElement>
+
+                    <VerticalTimelineElement
+                        className="vertical-timeline-element--work"
+                        contentStyle={{ background: '#24962e', color: 'white' }}
+                        contentArrowStyle={{ borderRight: '7px solid  #24962e' }}
+                        date="2020"
+                        iconStyle= {{background: '#24962e', color: '#fff', textAlign:'center', paddingTop:'1%'}}
+                        icon={<Icon size="big" name='tree' />}
+                    >
+                        <h3 className="vertical-timeline-element-title">MTTO. CAÑADAS - CESPED - CETOS - ARRIATES</h3>
+                        <h4 className="vertical-timeline-element-subtitle">Jardineria</h4>
+                        <p>
+                            
+                        </p>
+
+                        <div className="imagesContainer">
+                            <img className="" src="http://puertadehierroac.com/imagenes/mttoCanadas/Imagen79.png"/>
+                            <img className="" src="http://puertadehierroac.com/imagenes/mttoCanadas/Imagen80.png"/>
+                            <img className="" src="http://puertadehierroac.com/imagenes/mttoCanadas/Imagen81.png"/>
+                            <img className="" src="http://puertadehierroac.com/imagenes/mttoCanadas/Imagen82.png"/>
+                          
+                        </div>
+                    </VerticalTimelineElement>
+
+                    <VerticalTimelineElement
+                        className="vertical-timeline-element--work"
+                        contentStyle={{ background: '#c4971a', color: 'white' }}
+                        contentArrowStyle={{ borderRight: '7px solid  #c4971a' }}
+                        date="2020"
+                        iconStyle= {{background: '#c4971a', color: '#fff', textAlign:'center', paddingTop:'1%'}}
+                        icon={<Icon size="big" name='wrench' />}
+                    >
+                        <h3 className="vertical-timeline-element-title">RESTAURACIÓN DE PIPA</h3>
+                        <h4 className="vertical-timeline-element-subtitle">Mantenimiento</h4>
+                        <p>
+                            
+                        </p>
+
+                        <div className="imagesContainer">
+                            <img className="" src="http://puertadehierroac.com/imagenes/restPipa/Imagen107.jpg"/>
+                            <img className="" src="http://puertadehierroac.com/imagenes/restPipa/Imagen108.png"/>
+
+                          
+                        </div>
+                    </VerticalTimelineElement>
+
+                    <VerticalTimelineElement
+                        className="vertical-timeline-element--work"
+                        contentStyle={{ background: '#c4971a', color: 'white' }}
+                        contentArrowStyle={{ borderRight: '7px solid  #c4971a' }}
+                        date="2020"
+                        iconStyle= {{background: '#c4971a', color: '#fff', textAlign:'center', paddingTop:'1%'}}
+                        icon={<Icon size="big" name='wrench' />}
+                    >
+                        <h3 className="vertical-timeline-element-title">REPARACION DE BANQUETA DAÑADA</h3>
+                        <h4 className="vertical-timeline-element-subtitle">Mantenimiento</h4>
+                        <p>
+                            Se reparo una banqueta que presentaba un severo daño 
+                        </p>
+
+                        <div className="imagesContainer">
+                            <img className="" src="http://puertadehierroac.com/imagenes/reparacionBanqueta/Imagen150.png"/>
+                            <img className="" src="http://puertadehierroac.com/imagenes/reparacionBanqueta/Imagen151.png"/>
+                            <img className="" src="http://puertadehierroac.com/imagenes/reparacionBanqueta/Imagen152.png"/>
+                            <img className="" src="http://puertadehierroac.com/imagenes/reparacionBanqueta/Imagen153.png"/>
+                          
+                        </div>
+                    </VerticalTimelineElement>
+
+                    <VerticalTimelineElement
+                        className="vertical-timeline-element--work"
+                        contentStyle={{ background: '#c4971a', color: 'white' }}
+                        contentArrowStyle={{ borderRight: '7px solid  #c4971a' }}
+                        date="2020"
+                        iconStyle= {{background: '#c4971a', color: '#fff', textAlign:'center', paddingTop:'1%'}}
+                        icon={<Icon size="big" name='wrench' />}
+                    >
+                        <h3 className="vertical-timeline-element-title">FUMIGACIÓN CONTRA EL DENGUE</h3>
+                        <h4 className="vertical-timeline-element-subtitle">Mantenimiento</h4>
+                        <p>
+                            En los meses de Agosto y Octubre se llevo a cabo una profunda fumigacion en contra del mosquito del dengue 
+                        </p>
+
+                        <div className="imagesContainer">
+                            <img className="" src="http://puertadehierroac.com/imagenes/fumigacionDengue/Imagen86.png"/>
+                            <img className="" src="http://puertadehierroac.com/imagenes/fumigacionDengue/Imagen87.png"/>
+                            <img className="" src="http://puertadehierroac.com/imagenes/fumigacionDengue/Imagen88.png"/>
+                            <img className="" src="http://puertadehierroac.com/imagenes/fumigacionDengue/Imagen89.png"/>
+                          
+                        </div>
+                    </VerticalTimelineElement>
+
+
+                    <VerticalTimelineElement
+                        className="vertical-timeline-element--work"
+                        contentStyle={{ background: '#c4971a', color: 'white' }}
+                        contentArrowStyle={{ borderRight: '7px solid  #c4971a' }}
+                        date="2020"
+                        iconStyle= {{background: '#c4971a', color: '#fff', textAlign:'center', paddingTop:'1%'}}
+                        icon={<Icon size="big" name='wrench' />}
+                    >
+                        <h3 className="vertical-timeline-element-title">REPARACIÓN DE LOSAS DE CONCRETO</h3>
+                        <h4 className="vertical-timeline-element-subtitle">Mantenimiento</h4>
+                        <p>
+                            Sobre el boulevard se realizo la reparacion de algunas losas de concreto que se encontraban en mal estado 
+                        </p>
+
+                        <div className="imagesContainer">
+                            <img className="" src="http://puertadehierroac.com/imagenes/losasConcreto/Imagen121.jpg"/>
+                            <img className="" src="http://puertadehierroac.com/imagenes/losasConcreto/Imagen122.jpg"/>
+                            <img className="" src="http://puertadehierroac.com/imagenes/losasConcreto/Imagen123.jpg"/>
+                            <img className="" src="http://puertadehierroac.com/imagenes/losasConcreto/Imagen124.jpg"/>
+                          
                         </div>
                     </VerticalTimelineElement>
 

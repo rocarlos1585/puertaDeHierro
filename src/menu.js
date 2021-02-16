@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { push as Menu } from 'react-burger-menu'
+import { Icon } from 'semantic-ui-react'
 import './App.css'; 
 
 
@@ -16,6 +17,7 @@ class MenuLog extends Component{
           redirectToReferrer: false
         };
         this.login = this.login.bind(this);
+        this.logout = this.logout.bind(this);
         this.onChange = this.onChange.bind(this);
     }
     
@@ -24,23 +26,31 @@ class MenuLog extends Component{
         if(this.state.username && this.state.password){
         var formData = new FormData();
         var self = this;
+        let usuario = this.state.username;
+        let pass = this.state.password;
     
-        formData.append('userName', this.state.username);
-        formData.append('passWord', this.state.password);
+        //formData.append('userName', this.state.username);
+        //formData.append('passWord', this.state.password);
     
-        axios({
-            method: 'post',
-            params:{action:"login"},
-            url: 'http://puertadehierroac.com/login.php',
-            data: formData,
-            config: { headers: {'Content-Type': 'multipart/form-data' }}
+        /*axios({
+            method: 'get',
+            
+            url: `https://puertadehierroac.mx/app/usuarios/login/${usuario}/${pass}`,
+            
+            config: { headers: {'X-API-KEY': '1af0d480c2ad84891b106a057b130013' }}
+        })*/
+        axios.get(`https://puertadehierroac.mx/app/usuarios/login/${usuario}/${pass}`, {
+            headers: {
+                'X-API-KEY': '1af0d480c2ad84891b106a057b130013'
+            }
         })
         .then(function (response) {
     
             console.log(response.data)
-    
-            if(response.data != "El usuario no existe"){
-                alert("Bienvenido")
+            
+            if(response.data.mensaje == "Usuario cargado correctamente"){
+                alert(response.data.usuario.contratos.length)
+                
                 sessionStorage.setItem("auth", "true")
 
                 self.setState({
@@ -49,6 +59,7 @@ class MenuLog extends Component{
             }else{
                 alert("El Usuario o la Contraseña son incorrectos")
             }
+
     
         })
         .catch(function (response) {
@@ -58,9 +69,17 @@ class MenuLog extends Component{
         }
     }
 
+    logout() {
+                       
+        sessionStorage.setItem("auth", "false")
+
+        this.setState({
+            loged:false
+        })
+    }
+
     onChange(e){
         this.setState({[e.target.name]:e.target.value});
-        
     }
 
 
@@ -76,10 +95,12 @@ class MenuLog extends Component{
                         </div>
                         <a id="home" className="menu-item" href="/">Inicio</a>
                         <a id="home" className="menu-item" href="/reglamentos">Reglamentos</a>
-                        <a id="about" className="menu-item" href="/portalResidentes">Portal de Residente</a>
+                        <a id="about" className="menu-item" href="/portalResidentes">Consulta de Saldo</a>
+                        <a id="about" className="menu-item" href="/portalResidentes">Historial de Pagos</a>
                         <a id="contact" className="menu-item" href="/directorio">Directorio</a>
-                        <a id="contact" className="menu-item" href="/">Galeria</a>
+                        <a id="contact" className="menu-item" href="/galeria">Galeria</a>
                         <a id="contact" className="menu-item" href="/obras">Obras terminadas</a>
+                        <a className="logout-link" onClick={this.logout}>Cerrar Sesion  <Icon size="large" name='log out' /> </a>
                     </Menu> 
                 </div>
             );

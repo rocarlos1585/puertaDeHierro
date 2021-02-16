@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { push as Menu } from 'react-burger-menu'
+import  MenuLog  from './menu.js'
 import './App.css';
 
 
@@ -13,23 +14,93 @@ class PortalResidentes extends Component{
 
     return (
 
-      <div>
+      <div className="consultaSaldoContainer">
 
-        <Menu>
-            <div>
-            <img className="logoMenu" src="https://firebasestorage.googleapis.com/v0/b/puertahierro-67dce.appspot.com/o/logoPuerta2.png?alt=media&token=ed22f2a2-5a78-4140-91f4-2adc401ab920"/>
-            </div>
-            <a id="home" className="menu-item" href="/">Inicio</a>
-            <a id="home" className="menu-item" href="/reglamentos">Reglamentos</a>
-            <a id="about" className="menu-item" href="/portalResidentes">Portal de Residente</a>
-            <a id="contact" className="menu-item" href="/directorio">Directorio</a>
-            <a id="contact" className="menu-item" href="/">Galeria</a>
-            <a id="contact" className="menu-item" href="/obras">Obras terminadas</a>
-        </Menu>
-
+        <MenuLog/>
         <div>
-            <br/>
-            <h1>En construccion.....</h1>
+            
+            <div className = "datosCondominoContainer">
+              <p>Titular: [nombre de residendte aqui]</p>
+              <p>No. de Contrato: [No. de contrato aqui]</p>
+            </div>
+
+            <table className = "tablaDatos">
+              
+              <tr>
+                <th>Periodo</th>
+                <th>Concepto</th>
+                <th>Importe</th>
+                <th>Recargos</th>
+                <th>Total</th>
+              </tr>
+
+              <tr>
+                <td>Alfreds Futterkiste</td>
+                <td>Maria Anders</td>
+                <td>Germany</td>
+                <td>$0.00</td>
+                <td>$0.00</td>
+              </tr>
+
+              <tr>
+                <td>Alfreds Futterkiste</td>
+                <td>Maria Anders</td>
+                <td>Germany</td>
+                <td>$0.00</td>
+                <td>$0.00</td>
+              </tr>
+
+              <tr>
+                <td>Alfreds Futterkiste</td>
+                <td>Maria Anders</td>
+                <td>Germany</td>
+                <td>$0.00</td>
+                <td>$0.00</td>
+              </tr>
+
+              <tr>
+                <td>Alfreds Futterkiste</td>
+                <td>Maria Anders</td>
+                <td>Germany</td>
+                <td>$0.00</td>
+                <td>$0.00</td>
+              </tr>
+
+              <tr>
+                <td>Alfreds Futterkiste</td>
+                <td>Maria Anders</td>
+                <td>Germany</td>
+                <td>$0.00</td>
+                <td>$0.00</td>
+              </tr>
+
+              <tr>
+                <td>Alfreds Futterkiste</td>
+                <td>Maria Anders</td>
+                <td>Germany</td>
+                <td>$0.00</td>
+                <td>$0.00</td>
+              </tr>
+
+              <tr>
+                <td>Alfreds Futterkiste</td>
+                <td>Maria Anders</td>
+                <td>Germany</td>
+                <td>$0.00</td>
+                <td>$0.00</td>
+              </tr>
+            
+            </table>
+
+            <div className = "datosTotalContainer">
+              <p>Cuotas de Mantenimiento: $0.00</p>
+              <p>Cuotas de Agua: $0.00</p>
+              <p>Recargos: $0.00</p>
+              <p>Gastos: $0.00</p>
+              <p>Otros Cargos: $0.00</p>
+              <p>Saldo a Favor(-): $0.00</p>
+              <p>Total: $0.00</p>
+            </div>
         </div>
 
 
