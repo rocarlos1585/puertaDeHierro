@@ -207,7 +207,6 @@ class Obras extends Component{
                             <img className="" src="http://puertadehierroac.com/imagenes/trabajosTotalplay/Imagen34.jpg"/>
                             <img className="" src="http://puertadehierroac.com/imagenes/trabajosTotalplay/Imagen35.png"/>
                             <img className="" src="http://puertadehierroac.com/imagenes/trabajosTotalplay/Imagen36.jpg"/>
-
                         </div>
                     </VerticalTimelineElement>
 

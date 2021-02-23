@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { push as Menu } from 'react-burger-menu'
 import  MenuLog  from './menu.js'
+import { Dropdown } from 'semantic-ui-react'
 import './App.css';
 
 
@@ -9,6 +10,39 @@ import './App.css';
 
 class PortalResidentes extends Component{
 
+  constructor(props) {
+    super(props);
+    this.state = {
+        contratos:[],
+        selectedOption:"",
+    };
+    this.prueba = this.prueba.bind(this);
+    this.onValueChange = this.onValueChange.bind(this);
+}
+
+  prueba(e){
+    console.log(this.state.contratos)
+  }
+
+  onValueChange(event) {
+    this.setState({
+      selectedOption: event.target.value
+    });
+
+    alert(this.state.selectedOption)
+  }
+
+  componentWillMount(){
+    //alert(sessionStorage.getItem("contratos"))
+    var contratosParse=JSON.parse(sessionStorage.getItem("contratos"))
+
+    this.setState({
+      contratos : contratosParse
+    })
+
+    console.log("aqui imprimo el state: "+this.state.contratos)
+    
+  }
 
   render() {
 
@@ -24,6 +58,26 @@ class PortalResidentes extends Component{
               <p>No. de Contrato: [No. de contrato aqui]</p>
             </div>
 
+            
+              {this.state.contratos.length > 1 ? 
+                <div className="noContratosContainer">
+
+                  {this.state.contratos.map((it)=>(
+                    <label>
+                      <input type="radio" value={it.contrato} checked={this.state.selectedOption === it.contrato} onChange={this.onValueChange} />
+                      {it.contrato}
+                  </label>
+                      
+                  ))}
+
+                </div>
+
+                :
+                
+                <h1>numero de contrato</h1>
+              }
+
+          
             <table className = "tablaDatos">
               
               <tr>

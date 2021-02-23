@@ -28,6 +28,7 @@ class MenuLog extends Component{
         var self = this;
         let usuario = this.state.username;
         let pass = this.state.password;
+        var contratosString = "";
     
         //formData.append('userName', this.state.username);
         //formData.append('passWord', this.state.password);
@@ -50,8 +51,11 @@ class MenuLog extends Component{
             
             if(response.data.mensaje == "Usuario cargado correctamente"){
                 alert(response.data.usuario.contratos.length)
+
+                contratosString=JSON.stringify(response.data.usuario.contratos)
                 
                 sessionStorage.setItem("auth", "true")
+                sessionStorage.setItem("contratos", contratosString);
 
                 self.setState({
                     loged:true
