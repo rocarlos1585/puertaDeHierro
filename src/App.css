@@ -495,23 +495,47 @@ Note: Beware of modifying this element as it can break the animations - you shou
 }
 
 .datosCondominoContainer{
+  width: 90%;
+  
+  margin-left: auto;
+  margin-right: auto;
   background-color: red;
-  width: 30%;
+  
+}
+
+.noContratosContainer{
+  width: 90%;
+  margin:1%;
+  margin-left: auto;
+  margin-right: auto;
+  border:1px solid blue;
+}
+
+.noContratosContainer label{
+  margin:1%;
 }
 
 .tablaDatos{
   width: 90%;
-  margin:3%;
-  background-color: ;
+  height: 40vh;
+  margin:1%;
+  background-color: white;
   margin-left: auto;
   margin-right: auto;
-  border:1px solid red;
+
+}
+
+.tablaDatos thead{
+  background-color: #926123;
+  color:white
 }
 
 .tablaDatos th{
-  text-align: left;
-  border:1px dashed blue;
+  height: 10%;
+  text-align: center;
+
 }
+
 
 .tablaDatos tr:nth-child(even) {
   background-color:#926123;

@@ -80,6 +80,7 @@ class MenuLog extends Component{
         this.setState({
             loged:false
         })
+
     }
 
     onChange(e){
@@ -104,7 +105,7 @@ class MenuLog extends Component{
                         <a id="contact" className="menu-item" href="/directorio">Directorio</a>
                         <a id="contact" className="menu-item" href="/galeria">Galeria</a>
                         <a id="contact" className="menu-item" href="/obras">Obras terminadas</a>
-                        <a className="logout-link" onClick={this.logout}>Cerrar Sesion  <Icon size="large" name='log out' /> </a>
+                        <a className="logout-link" onClick={this.logout} >Cerrar Sesion  <Icon size="large" name='log out' /> </a>
                     </Menu> 
                 </div>
             );
