@@ -6,7 +6,8 @@ import Directorio from './directorio.js'
 import App from './landing.js'
 import Obras from './obras.js';
 import Reglamentos from './reglamentos.js';
-import PortalResidentes from './portalResidente.js';
+import ConsultaSaldo from './consultaSaldo.js';
+import HistorialPagos from './historialPagos.js'
 import Galeria from './galeria.js';
 
 
@@ -19,7 +20,8 @@ class RouterPrincipal extends Component {
             <Route exact path="/" component={App2}/>
             <Route path="/directorio" component={Directorio}/>
             <Route path="/reglamentos" component={Reglamentos}/>
-            <Route path="/portalResidentes" component={PortalResidentes}/>
+            <Route path="/consultaSaldo" component={ConsultaSaldo}/>
+            <Route path="/historialPagos" component={HistorialPagos}/>
             <Route path="/obras" component={Obras}/>
             <Route path="/galeria" component={Galeria}/>
             <Route path="/landing" component={App}/>

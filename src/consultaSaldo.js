@@ -9,7 +9,7 @@ import './App.css';
 
 
 
-class PortalResidentes extends Component{
+class ConsultaSaldo extends Component{
 
   constructor(props) {
     super(props);
@@ -18,6 +18,8 @@ class PortalResidentes extends Component{
         selectedOption:"",
         detallesSaldo:[],
         fechaActualizacion:"",
+        titularContrato:"",
+        domicilio:""
     };
     this.prueba = this.prueba.bind(this);
     this.onValueChange = this.onValueChange.bind(this);
@@ -31,7 +33,7 @@ class PortalResidentes extends Component{
 
     var self=this
 
-    axios.get(`https://puertadehierroac.mx/app/contratos/saldos/${event.target.value}`, {
+    axios.get(`https://sac14.com.mx/app/puertahierro/contratos/saldos/${event.target.value}`, {
       headers: {
           'X-API-KEY': '1af0d480c2ad84891b106a057b130013'
       } 
@@ -42,6 +44,8 @@ class PortalResidentes extends Component{
       self.setState({
         detallesSaldo:response.data.detalles_saldo,
         fechaActualizacion:response.data.fecha_sincronizacion,
+        titularContrato:response.data.contrato.propietario,
+        domicilio:response.data.contrato.ubicacion
       })
 
 
@@ -70,7 +74,7 @@ class PortalResidentes extends Component{
     
   }
 
-  render() {
+  render(){
     if(sessionStorage.getItem("auth")=="true"){
       return (
 
@@ -80,8 +84,8 @@ class PortalResidentes extends Component{
           <div>
 
             <div className = "datosCondominoContainer">
-            <p>Titular: [nombre de residente aqui]</p>
-            <p>No. de Contrato: [No. de contrato aqui]</p>
+            <p>Titular: {this.state.titularContrato} </p>
+            <p>Domicilio: {this.state.domicilio}</p>
           </div>
 
 
@@ -111,7 +115,7 @@ class PortalResidentes extends Component{
                 <th>Concepto</th>
                 <th>Importe</th>
                 <th>Recargos</th>
-                <th>Total</th>
+
               </tr>
             </thead>
             
@@ -124,7 +128,7 @@ class PortalResidentes extends Component{
                     <td>{it.concepto}</td>
                     <td>${new Intl.NumberFormat('en-IN', { maximumSignificantDigits: 8  }).format(it.cuotas)}</td>           
                     <td>${new Intl.NumberFormat('en-IN', { maximumSignificantDigits: 8  }).format(it.recgos)}</td>
-                    <td>$0.00</td>
+
                   </tr>
                 ))}
               </tbody>
@@ -136,7 +140,7 @@ class PortalResidentes extends Component{
                   <td>---</td>
                   <td>$0.00</td>
                   <td>$0.00</td>
-                  <td>$0.00</td>
+
                 </tr>
 
               </tbody>
@@ -166,4 +170,4 @@ class PortalResidentes extends Component{
 
 }
 
-export default PortalResidentes;
+export default ConsultaSaldo;

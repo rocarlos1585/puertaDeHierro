@@ -40,7 +40,7 @@ class MenuLog extends Component{
             
             config: { headers: {'X-API-KEY': '1af0d480c2ad84891b106a057b130013' }}
         })*/
-        axios.get(`https://puertadehierroac.mx/app/usuarios/login/${usuario}/${pass}`, {
+        axios.get(`https://sac14.com.mx/app/puertahierro/usuarios/login/${usuario}/${pass}`, {
             headers: {
                 'X-API-KEY': '1af0d480c2ad84891b106a057b130013'
             }
@@ -100,8 +100,8 @@ class MenuLog extends Component{
                         </div>
                         <a id="home" className="menu-item" href="/">Inicio</a>
                         <a id="home" className="menu-item" href="/reglamentos">Reglamentos</a>
-                        <a id="about" className="menu-item" href="/portalResidentes">Consulta de Saldo</a>
-                        <a id="about" className="menu-item" href="/portalResidentes">Historial de Pagos</a>
+                        <a id="about" className="menu-item" href="/consultaSaldo">Consulta de Saldo</a>
+                        <a id="about" className="menu-item" href="/historialPagos">Historial de Pagos</a>
                         <a id="contact" className="menu-item" href="/directorio">Directorio</a>
                         <a id="contact" className="menu-item" href="/galeria">Galeria</a>
                         <a id="contact" className="menu-item" href="/obras">Obras terminadas</a>
