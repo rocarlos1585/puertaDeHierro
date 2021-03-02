@@ -94,7 +94,7 @@ class MenuLog extends Component{
         if(sessionStorage.getItem("auth")=="true"){
             return(
                 <div>
-                    <Menu>
+                    <Menu disableAutoFocus  burgerButtonClassName={ "menuLogin" }>
                         <div>
                             <img className="logoMenu" src="http://puertadehierroac.com/imagenes/iconos/logoBlancoLogin.png"/>
                         </div>
@@ -102,9 +102,9 @@ class MenuLog extends Component{
                         <a id="home" className="menu-item" href="/reglamentos">Reglamentos</a>
                         <a id="about" className="menu-item" href="/consultaSaldo">Consulta de Saldo</a>
                         <a id="about" className="menu-item" href="/historialPagos">Historial de Pagos</a>
-                        <a id="contact" className="menu-item" href="/directorio">Directorio</a>
+                        <a id="contact" className="menu-item" href="/directorio">Directorio Telefonico</a>
                         <a id="contact" className="menu-item" href="/galeria">Galeria</a>
-                        <a id="contact" className="menu-item" href="/obras">Obras terminadas</a>
+                        <a id="contact" className="menu-item" href="/obras">Avances</a>
                         <a className="logout-link" onClick={this.logout} >Cerrar Sesion  <Icon size="large" name='log out' /> </a>
                     </Menu> 
                 </div>
@@ -113,7 +113,7 @@ class MenuLog extends Component{
   
             return (
                 <div>
-                    <Menu>
+                    <Menu disableAutoFocus  burgerButtonClassName={ "menuLogin" }>
                         <div className="loginForm">
                             <div className="inputsContainer">
                                 <img className="logoPuertaLogin" src="http://puertadehierroac.com/imagenes/iconos/logoBlancoLogin.png"/>
