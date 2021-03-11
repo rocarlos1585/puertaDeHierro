@@ -4,6 +4,7 @@ import  MenuLog  from './menu.js'
 import axios from 'axios';
 import { Dropdown } from 'semantic-ui-react'
 import './App.css';
+import CollapsibleTable from './tablaHistorial'
 
 
 
@@ -70,7 +71,7 @@ class HistorialPagos extends Component{
       contratos : contratosParse
     })
 
-    console.log("aqui imprimo el state: "+this.state.contratos)
+    //console.log("aqui imprimo el state: "+this.state.contratos)
     
   }
 
@@ -108,7 +109,9 @@ class HistorialPagos extends Component{
           }
 
           <div className="tablaDatosContainer">
-          <table className="tablaDatos">
+
+            <CollapsibleTable/>
+          {/*<table className="tablaDatos">
             <thead>
               <tr>
                 <th>Fecha de Pago</th>
@@ -139,8 +142,8 @@ class HistorialPagos extends Component{
                     <td>${new Intl.NumberFormat('en-IN', { maximumSignificantDigits: 8  }).format(it.saldofavor_aplicado)}</td>
                     <td>${new Intl.NumberFormat('en-IN', { maximumSignificantDigits: 8  }).format(it.iva_pagado)}</td>
                     <td>${new Intl.NumberFormat('en-IN', { maximumSignificantDigits: 8  }).format(it.total_pago)}</td>
-                    {/*<td>${new Intl.NumberFormat('en-IN', { maximumSignificantDigits: 8  }).format(it.cuotas)}</td>           
-                    <td>${new Intl.NumberFormat('en-IN', { maximumSignificantDigits: 8  }).format(it.recgos)}</td>*/}
+                    {//<td>${new Intl.NumberFormat('en-IN', { maximumSignificantDigits: 8  }).format(it.cuotas)}</td>           
+                    <td>${new Intl.NumberFormat('en-IN', { maximumSignificantDigits: 8  }).format(it.recgos)}</td>}
                   </tr>
                 ))}
               </tbody>
@@ -157,7 +160,7 @@ class HistorialPagos extends Component{
 
               </tbody>
             }
-          </table>
+          </table>*/}
           </div>
         </div>
 

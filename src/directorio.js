@@ -26,8 +26,8 @@ class Directorio extends Component {
                   <div class="middle aligned content">
                     <div class="header">GERENCIA</div>
                     <div class="description">
-                      <p>Caja: <a href="tel:3323019805"> <i aria-hidden="true" class="call icon"></i> (33)23-01-98-05</a> ext:102</p>
-                      <p>Asistente de Gerencia: <a href="tel:3323019803"> <i aria-hidden="true" class="call icon"></i> (33)23-01-98-03</a> ext:100</p>
+                      <p>Caja: <a className="enlaceTelefono" href="tel:3323019805"> <i aria-hidden="true" class="call icon"></i> (33)23-01-98-05</a> ext:102</p>
+                      <p>Asistente de Gerencia: <a className="enlaceTelefono" href="tel:3323019803"> <i aria-hidden="true" class="call icon"></i> (33)23-01-98-03</a> ext:100</p>
                     </div>
 
                   </div>
@@ -35,14 +35,14 @@ class Directorio extends Component {
 
                 <div class="item">
                   <div class="ui small image">
-                    <img src="http://puertadehierroac.com/imagenes/cotos/acueductoCard.jpg"/>
+                    <img src="http://puertadehierroac.mx/imagenes/cotos/acueductoCard.jpg"/>
                   </div>
                   <div class="middle aligned content">
                     <div class="header">INGRESO ACUEDUCTO</div>
                     <div class="description">
-                      <p>peatonal: <a href="tel:3323019815"> <i aria-hidden="true" class="call icon"></i> (33)23-01-98-15</a> ext:208</p>
-                      <p>vehicular 1: <a href="tel:3323019812"> <i aria-hidden="true" class="call icon"></i> (33)23-01-98-12</a> ext:205</p>
-                      <p>vehicular 2: <a href="tel:3323019813"> <i aria-hidden="true" class="call icon"></i> (33)23-01-98-13</a> ext:206</p>
+                      <p>peatonal: <a className="enlaceTelefono" href="tel:3323019815"> <i aria-hidden="true" class="call icon"></i> (33)23-01-98-15</a> ext:208</p>
+                      <p>vehicular 1: <a className="enlaceTelefono" href="tel:3323019812"> <i aria-hidden="true" class="call icon"></i> (33)23-01-98-12</a> ext:205</p>
+                      <p>vehicular 2: <a className="enlaceTelefono" href="tel:3323019813"> <i aria-hidden="true" class="call icon"></i> (33)23-01-98-13</a> ext:206</p>
                     </div>
 
                   </div>
@@ -51,14 +51,14 @@ class Directorio extends Component {
 
                 <div class="item">
                   <div class="ui small image">
-                    <img src="http://puertadehierroac.com/imagenes/cotos/patriaCard.jpg"/>
+                    <img src="http://puertadehierroac.mx/imagenes/cotos/patriaCard.jpg"/>
                   </div>
                   <div class="middle aligned content">
                     <div class="header">INGRESO PATRIA</div>
                     <div class="description">
-                      <p>peatonal: <a href="tel:3323019825"> <i aria-hidden="true" class="call icon"></i> (33)23-01-98-25</a> ext:218</p>
-                      <p>vehicular 1: <a href="tel:3323019822"> <i aria-hidden="true" class="call icon"></i> (33)23-01-98-22</a> ext:215</p>
-                      <p>vehicular 2: <a href="tel:3323019823"> <i aria-hidden="true" class="call icon"></i> (33)23-01-98-23</a> ext:216</p>
+                      <p>peatonal: <a className="enlaceTelefono" href="tel:3323019825"> <i aria-hidden="true" class="call icon"></i> (33)23-01-98-25</a> ext:218</p>
+                      <p>vehicular 1: <a className="enlaceTelefono" href="tel:3323019822"> <i aria-hidden="true" class="call icon"></i> (33)23-01-98-22</a> ext:215</p>
+                      <p>vehicular 2: <a className="enlaceTelefono" href="tel:3323019823"> <i aria-hidden="true" class="call icon"></i> (33)23-01-98-23</a> ext:216</p>
                     </div>
 
                   </div>
@@ -66,7 +66,7 @@ class Directorio extends Component {
                 
                 <div class="item">
                   <div class="ui small image">
-                    <img src="http://puertadehierroac.com/imagenes/cotos/andaluciaCard.jpg"/>
+                    <img src="http://puertadehierroac.mx/imagenes/cotos/andaluciaCard.jpg"/>
                   </div>
                   <div class="middle aligned content">
                     <div class="header">ANDALUCIA</div>
@@ -83,7 +83,7 @@ class Directorio extends Component {
 
                 <div class="item">
                   <div class="ui small image">
-                    <img src="http://puertadehierroac.com/imagenes/cotos/aragonCard.jpg"/>
+                    <img src="http://puertadehierroac.mx/imagenes/cotos/aragonCard.jpg"/>
                   </div>
                   <div class="middle aligned content">
                     <div class="header">ARAGON</div>
@@ -100,7 +100,7 @@ class Directorio extends Component {
 
                 <div class="item">
                   <div class="ui small image">
-                    <img src="http://puertadehierroac.com/imagenes/cotos/asturiasCard.jpg"/>
+                    <img src="http://puertadehierroac.mx/imagenes/cotos/asturiasCard.jpg"/>
                   </div>
                   <div class="middle aligned content">
                     <div class="header">ASTURIAS</div>
@@ -117,7 +117,7 @@ class Directorio extends Component {
 
                 <div class="item">
                   <div class="ui small image">
-                    <img src="http://puertadehierroac.com/imagenes/cotos/canariasCard.jpg"/>
+                    <img src="http://puertadehierroac.mx/imagenes/cotos/canariasCard.jpg"/>
                   </div>
                   <div class="middle aligned content">
                     <div class="header">CANARIAS</div>
@@ -134,7 +134,7 @@ class Directorio extends Component {
 
                 <div class="item">
                   <div class="ui small image">
-                    <img src="http://puertadehierroac.com/imagenes/cotos/castillaViejaCard.jpg"/>
+                    <img src="http://puertadehierroac.mx/imagenes/cotos/castillaViejaCard.jpg"/>
                   </div>
                   <div class="middle aligned content">
                     <div class="header">CASTILLA LA VIEJA</div>
@@ -151,7 +151,7 @@ class Directorio extends Component {
                 
                 <div class="item">
                   <div class="ui small image">
-                    <img src="http://puertadehierroac.com/imagenes/cotos/castillaNuevaCard.jpg"/>
+                    <img src="http://puertadehierroac.mx/imagenes/cotos/castillaNuevaCard.jpg"/>
                   </div>
                   <div class="middle aligned content">
                     <div class="header">CASTILLA LA NUEVA</div>
@@ -168,7 +168,7 @@ class Directorio extends Component {
 
                 <div class="item">
                   <div class="ui small image">
-                    <img src="http://puertadehierroac.com/imagenes/cotos/catalunaCard.jpg"/>
+                    <img src="http://puertadehierroac.mx/imagenes/cotos/catalunaCard.jpg"/>
                   </div>
                   <div class="middle aligned content">
                     <div class="header">CATALUÑA</div>
@@ -186,7 +186,7 @@ class Directorio extends Component {
 
                 <div class="item">
                   <div class="ui small image">
-                    <img src="http://puertadehierroac.com/imagenes/cotos/extremaduraCard.jpg"/>
+                    <img src="http://puertadehierroac.mx/imagenes/cotos/extremaduraCard.jpg"/>
                   </div>
                   <div class="middle aligned content">
                     <div class="header">EXTREMADURA</div>
@@ -204,7 +204,7 @@ class Directorio extends Component {
 
                 <div class="item">
                   <div class="ui small image">
-                    <img src="http://puertadehierroac.com/imagenes/cotos/galiciaCard.jpg"/>
+                    <img src="http://puertadehierroac.mx/imagenes/cotos/galiciaCard.jpg"/>
                   </div>
                   <div class="middle aligned content">
                     <div class="header">GALICIA</div>
@@ -222,7 +222,7 @@ class Directorio extends Component {
 
                 <div class="item">
                   <div class="ui small image">
-                    <img src="http://puertadehierroac.com/imagenes/cotos/leonCard.jpg"/>
+                    <img src="http://puertadehierroac.mx/imagenes/cotos/leonCard.jpg"/>
                   </div>
                   <div class="middle aligned content">
                     <div class="header">LEON</div>
@@ -240,7 +240,7 @@ class Directorio extends Component {
 
                 <div class="item">
                   <div class="ui small image">
-                    <img src="http://puertadehierroac.com/imagenes/cotos/mallorcaCard.jpg"/>
+                    <img src="http://puertadehierroac.mx/imagenes/cotos/mallorcaCard.jpg"/>
                   </div>
                   <div class="middle aligned content">
                     <div class="header">MALLORCA</div>
@@ -257,7 +257,7 @@ class Directorio extends Component {
 
                 <div class="item">
                   <div class="ui small image">
-                    <img src="http://puertadehierroac.com/imagenes/cotos/murciaCard.jpg"/>
+                    <img src="http://puertadehierroac.mx/imagenes/cotos/murciaCard.jpg"/>
                   </div>
                   <div class="middle aligned content">
                     <div class="header">MURCIA</div>
@@ -274,7 +274,7 @@ class Directorio extends Component {
 
                 <div class="item">
                   <div class="ui small image">
-                    <img src="http://puertadehierroac.com/imagenes/cotos/navarraCard.jpg"/>
+                    <img src="http://puertadehierroac.mx/imagenes/cotos/navarraCard.jpg"/>
                   </div>
                   <div class="middle aligned content">
                     <div class="header">NAVARRA</div>
@@ -291,7 +291,7 @@ class Directorio extends Component {
 
                 <div class="item">
                   <div class="ui small image">
-                    <img src="http://puertadehierroac.com/imagenes/cotos/valenciaTenerifeCard.jpg"/>
+                    <img src="http://puertadehierroac.mx/imagenes/cotos/valenciaTenerifeCard.jpg"/>
                   </div>
                   <div class="middle aligned content">
                     <div class="header">VALENCIA / TENERIFE</div>

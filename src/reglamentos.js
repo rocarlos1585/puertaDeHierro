@@ -22,17 +22,17 @@ class Reglamentos extends Component{
                     <div className="documentsContainer">
 
                         <div className="documentContainer">
-                            <img src="http://puertadehierroac.com/imagenes/iconos/pdfIcon.png"/>
+                            <img src="http://puertadehierroac.mx/imagenes/iconos/pdfIcon.png"/>
                             <h1>Reglamento de Construccion del Fraccionmiento Puerta de Hierro</h1>
-                            <a target="_blank" href="http://puertadehierroac.com/documentos/reglamento-de-construccion.pdf"> <i aria-hidden="true" class="eye icon"></i> Visualizar</a>
-                            <a href="http://puertadehierroac.com/documentos/reglamento-de-construccion.pdf" download> <i aria-hidden="true" class="download icon"></i>Descargar</a>
+                            <a target="_blank" href="http://puertadehierroac.mx/documentos/reglamento-de-construccion.pdf"> <i aria-hidden="true" class="eye icon"></i> Visualizar</a>
+                            <a href="http://puertadehierroac.mx/documentos/reglamento-de-construccion.pdf" download> <i aria-hidden="true" class="download icon"></i>Descargar</a>
                         </div>
 
                         <div className="documentContainer">
-                            <img src="http://puertadehierroac.com/imagenes/iconos/pdfIcon.png"/>
+                            <img src="http://puertadehierroac.mx/imagenes/iconos/pdfIcon.png"/>
                             <h1>Reglamento del Condominio "Residencial Puerta de Hierro"</h1>
-                            <a target="_blank" href="http://puertadehierroac.com/documentos/reglamento-general.pdf"> <i aria-hidden="true" class="eye icon"></i> Visualizar</a>
-                            <a href="http://puertadehierroac.com/documentos/reglamento-general.pdf" download> <i aria-hidden="true" class="download icon"></i>Descargar</a>
+                            <a target="_blank" href="http://puertadehierroac.mx/documentos/reglamento-general.pdf"> <i aria-hidden="true" class="eye icon"></i> Visualizar</a>
+                            <a href="http://puertadehierroac.mx/documentos/reglamento-general.pdf" download> <i aria-hidden="true" class="download icon"></i>Descargar</a>
                         </div>
 
                     </div>

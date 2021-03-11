@@ -147,7 +147,7 @@ class ConsultaSaldo extends Component{
             }
           </table>
 
-          <div className = "datosTotalContainer">
+          {/*<div className = "datosTotalContainer">
             <p>Cuotas de Mantenimiento: $0.00</p>
             <p>Cuotas de Agua: $0.00</p>
             <p>Recargos: $0.00</p>
@@ -155,7 +155,7 @@ class ConsultaSaldo extends Component{
             <p>Otros Cargos: $0.00</p>
             <p>Saldo a Favor(-): $0.00</p>
             <p>Total: $0.00</p>
-          </div>
+          </div>*/}
         </div>
 
 

@@ -22,8 +22,8 @@ class App2 extends Component{
 
           <MenuTiendas/>
           <div className="logoContainer">
-            <video className="videoContainer" src="http://puertadehierroac.com/imagenes/video.mp4" autoPlay muted loop type="video/mp4"></video>
-            <img className="logoPuerta" src="http://puertadehierroac.com/imagenes/iconos/logoBlanco.png" />
+            <video className="videoContainer" src="http://puertadehierroac.mx/imagenes/video.mp4" autoPlay muted loop type="video/mp4"></video>
+            <img className="logoPuerta" src="http://puertadehierroac.mx/imagenes/iconos/logoBlanco.png" />
           </div>
         </div>
     );

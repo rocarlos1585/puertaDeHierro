@@ -411,8 +411,15 @@ Note: Beware of modifying this element as it can break the animations - you shou
   font-family: ;
 }
 
+.enlaceTelefono{
+  color:#ddbc91;
+  text-decoration: none;
+  
+}
 
-
+.enlaceTelefono:hover{
+  color:#926123!important;
+}
 
 
 
@@ -495,6 +502,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
   width: 20%;
   margin:5px;
   max-height: 400px;
+  cursor: pointer;
 }
 
 
@@ -562,9 +570,8 @@ Note: Beware of modifying this element as it can break the animations - you shou
   margin:1%;
 }
 .tablaDatosContainer{
-
-  height: 100vh;
-  overflow-y: auto;
+  padding-left: 5%;
+  padding-right: 5%;
 }
 
 .tablaDatos{

@@ -14,11 +14,38 @@ class MenuLog extends Component{
           username: '',
           password: '',
           loged:false,
+          contratosInfo:[],
           redirectToReferrer: false
         };
         this.login = this.login.bind(this);
         this.logout = this.logout.bind(this);
         this.onChange = this.onChange.bind(this);
+        this.getContratosInfo = this.getContratosInfo.bind(this);
+    }
+
+
+    getContratosInfo(){
+        let contratos = []
+
+
+
+        this.state.contratosInfo.forEach(function(it){
+            axios.get(`https://sac14.com.mx/app/puertahierro/contratos/pagos/${it.contrato}`, {
+            headers: {
+                'X-API-KEY': '1af0d480c2ad84891b106a057b130013'
+            } 
+            }).then(function (response) {
+                console.log(response)
+                contratos.push(response.data)
+                sessionStorage.setItem("contratosInfo",JSON.stringify(contratos) );
+            })
+            .catch(function (response) {
+                //handle error
+                console.log(response)
+            });
+
+
+        })
     }
     
     login() {
@@ -29,17 +56,7 @@ class MenuLog extends Component{
         let usuario = this.state.username;
         let pass = this.state.password;
         var contratosString = "";
-    
-        //formData.append('userName', this.state.username);
-        //formData.append('passWord', this.state.password);
-    
-        /*axios({
-            method: 'get',
-            
-            url: `https://puertadehierroac.mx/app/usuarios/login/${usuario}/${pass}`,
-            
-            config: { headers: {'X-API-KEY': '1af0d480c2ad84891b106a057b130013' }}
-        })*/
+
         axios.get(`https://sac14.com.mx/app/puertahierro/usuarios/login/${usuario}/${pass}`, {
             headers: {
                 'X-API-KEY': '1af0d480c2ad84891b106a057b130013'
@@ -50,16 +67,20 @@ class MenuLog extends Component{
             console.log(response.data)
             
             if(response.data.mensaje == "Usuario cargado correctamente"){
-                alert(response.data.usuario.contratos.length)
+                //alert(response.data.usuario.contratos.length)
 
                 contratosString=JSON.stringify(response.data.usuario.contratos)
+                
                 
                 sessionStorage.setItem("auth", "true")
                 sessionStorage.setItem("contratos", contratosString);
 
                 self.setState({
-                    loged:true
-                })
+                    loged:true,
+                    contratosInfo:response.data.usuario.contratos
+                },() => {   self.getContratosInfo()    })
+
+                
             }else{
                 alert("El Usuario o la Contraseña son incorrectos")
             }
@@ -96,7 +117,7 @@ class MenuLog extends Component{
                 <div>
                     <Menu disableAutoFocus  burgerButtonClassName={ "menuLogin" }>
                         <div>
-                            <img className="logoMenu" src="http://puertadehierroac.com/imagenes/iconos/logoBlancoLogin.png"/>
+                            <img className="logoMenu" src="http://puertadehierroac.mx/imagenes/iconos/logoBlancoLogin.png"/>
                         </div>
                         <a id="home" className="menu-item" href="/">Inicio</a>
                         <a id="home" className="menu-item" href="/reglamentos">Reglamentos</a>
@@ -116,7 +137,7 @@ class MenuLog extends Component{
                     <Menu disableAutoFocus  burgerButtonClassName={ "menuLogin" }>
                         <div className="loginForm">
                             <div className="inputsContainer">
-                                <img className="logoPuertaLogin" src="http://puertadehierroac.com/imagenes/iconos/logoBlancoLogin.png"/>
+                                <img className="logoPuertaLogin" src="http://puertadehierroac.mx/imagenes/iconos/logoBlancoLogin.png"/>
                                 
                                 <input onChange={this.onChange} name="username" type="text" placeholder="usuario"/>
                                 <input onChange={this.onChange} name="password" type="password" placeholder="contraseña"/>
