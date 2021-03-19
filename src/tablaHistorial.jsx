@@ -26,49 +26,21 @@ const useRowStyles = makeStyles({
 });
 
 const columns = [
-  { field: 'id', headerName: 'ID', width: 70 },
-  { field: 'firstName', headerName: 'First name', width: 130 },
-  { field: 'lastName', headerName: 'Last name', width: 130 },
-  {
-    field: 'age',
-    headerName: 'Age',
-    type: 'number',
-    width: 90,
-  },
-  {
-    field: 'fullName',
-    headerName: 'Full name',
-    description: 'This column has a value getter and is not sortable.',
-    sortable: false,
-    width: 160,
-    valueGetter: (params) =>
-      `${params.getValue('firstName') || ''} ${params.getValue('lastName') || ''}`,
-  },
+  { field: 'id', headerName: 'ID de Pago', width: 70 },
+  { field: 'folio', headerName: 'Folio', width: 130 },
+  { field: 'fecha_pago', headerName: 'Fecha', width: 130 },
+  { field: 'cuota_pagada', headerName: 'Cuota pagada', width: 90 },
+  { field: 'recargos_pagados', headerName: 'Recargos pagados', width: 90 },
 ];
 
-const rows = [
-  createData("prueba", 3453, 345345, 345345, 345, 3.99),
-  createData("prueba", 3453, 345345, 345345, 345, 3.99),
-  createData("prueba", 3453, 345345, 345345, 345, 3.99),
-  createData("prueba", 3453, 345345, 345345, 345, 3.99)
-];
+const rows = [];
 
-const rows2 = [
-  { id: 1, lastName: 'Snow', firstName: 'Jon', age: 35 },
-  { id: 2, lastName: 'Lannister', firstName: 'Cersei', age: 42 },
-  { id: 3, lastName: 'Lannister', firstName: 'Jaime', age: 45 },
-  { id: 4, lastName: 'Stark', firstName: 'Arya', age: 16 },
-  { id: 5, lastName: 'Targaryen', firstName: 'Daenerys', age: null },
-  { id: 6, lastName: 'Melisandre', firstName: null, age: 150 },
-  { id: 7, lastName: 'Clifford', firstName: 'Ferrara', age: 44 },
-  { id: 8, lastName: 'Frances', firstName: 'Rossini', age: 36 },
-  { id: 9, lastName: 'Roxie', firstName: 'Harvey', age: 65 },
-];
+const rows2 = [{ id: 1, folio: 1, fecha_pago: 'mañana', cuota_pagada: 35345, recargos_pagados:23423 }];
 
-function createData(name, calories, fat, carbs, protein, price) {
+function createData(name, contract, fat, carbs, protein, price) {
   return {
     name,
-    calories,
+    contract,
     fat,
     carbs,
     protein,
@@ -186,24 +158,92 @@ function createData(name, calories, fat, carbs, protein, price) {
   };
 }
 
+function createDataPagos(id, folio, fecha_pago, cuota_pagada, recargos_pagados){
+  return{
+    id,
+    folio,
+    fecha_pago,
+    cuota_pagada,
+    recargos_pagados
+  }
+}
+
+
+
+
 
 function Row(props) {
   const { row } = props;
   const [open, setOpen] = React.useState(false);
+  const [pagosState, setPagosState] = React.useState([]);
+  const [actualizarBandera, setActualizarBandera] = React.useState(false);
+  
   const classes = useRowStyles();
+
+
+  const adivinaClick = (name, contrato) =>{
+    alert(name + "-" + contrato)
+    
+    setOpen(!open)
+    
+    
+
+    var self = this
+    var contadorForeach=0;
+
+    axios.get(`https://sac14.com.mx/app/puertahierro/contratos/pagos/${contrato}`, {
+      headers: {
+        'X-API-KEY': '1af0d480c2ad84891b106a057b130013'
+      }
+    })
+      .then(function (response) {
+        console.log(response.data.pagos)
+
+        response.data.pagos.forEach(function(it){
+          contadorForeach = contadorForeach+1;
+    
+          rows2.push(createDataPagos(it.id_pago, it.folio, it.fecha_pago, it.cuota_pagada, it.recargos_pagados))  
+         
+          if(contadorForeach==response.data.pagos.length){
+            setPagosState(rows2 )
+            setActualizarBandera(true);
+          }
+        })
+        
+        /*self.setState({
+          detallesPagos: response.data.pagos,
+          fechaActualizacion: response.data.fecha_sincronizacion,
+          titularContrato: response.data.contrato.propietario,
+          domicilio: response.data.contrato.ubicacion
+        })*/
+
+
+      })
+      .catch(function (response) {
+        //handle error
+        console.log(response)
+      });
+
+      setPagosState([])
+
+
+
+
+
+  }
 
   return (
     <React.Fragment>
       <TableRow className={classes.root}>
-        <TableCell>
-          <IconButton aria-label="expand row" size="small" onClick={() => setOpen(!open)}>
+        <TableCell>   
+          <IconButton aria-label="expand row" size="small" onClick={() => adivinaClick(row.name, row.contract)}>
             {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
           </IconButton>
         </TableCell>
         <TableCell component="th" scope="row">
           {row.name}
         </TableCell>
-        <TableCell align="right">{row.calories}</TableCell>
+        <TableCell align="right">{row.contract}</TableCell>
         <TableCell align="right">{row.fat}</TableCell>
         <TableCell align="right">{row.carbs}</TableCell>
         <TableCell align="right">{row.protein}</TableCell>
@@ -212,7 +252,7 @@ function Row(props) {
         <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
           <Collapse in={open} timeout="auto" unmountOnExit>
             <div style={{ height: 400, width: '100%' }}>
-              <DataGrid rows={rows2} columns={columns} pageSize={5} checkboxSelection />
+              <DataGrid rows={pagosState} columns={columns} pageSize={5} />
             </div>
           </Collapse>
         </TableCell>
@@ -244,57 +284,28 @@ Row.propTypes = {
 export default function CollapsibleTable() {
   const[contratos, setContratos] = useState([]);
   const[responseLocal, setResponseLocal] = useState([]);
+  const[actualizaRender, setActualizaRender] = useState(false);
+  let contadorForeach = 0;
 
   useEffect( () =>{
     console.log("aqui imprimo el cache: ")
     console.log(JSON.parse(sessionStorage.getItem("contratosInfo")))
-  
-    /*var contratosParse=JSON.parse(sessionStorage.getItem("contratos"))
-    console.log("aqui se imprime el parse de contratos: ")
-    console.log(contratosParse)
-    setContratos(contratosParse)
+    let contratosCache = JSON.parse(sessionStorage.getItem("contratosInfo"))
 
 
 
-    contratos.forEach(function(contratoIt){
-      
+    contratosCache.forEach(function(it){
+      contadorForeach = contadorForeach+1;
 
-
-      const promesa = new Promise((resolve, reject)=>{
-
-
-        axios.get(`https://sac14.com.mx/app/puertahierro/contratos/pagos/${contratoIt.contrato}`, {
-          headers: {
-              'X-API-KEY': '1af0d480c2ad84891b106a057b130013'
-          } 
-        }).then(function (response) {
-          if(response.data.err===false){
-            
-            resolve( setResponseLocal(response.data) )
-            console.log("no hubo error")
-          }
-        }).catch(function (response) {
-          //handle error
-          
-          console.log("hubo un error");
-        });
-
-              
-          
-      }).then(()=>{
-        console.log("respuesta de la promesa: "+responseLocal.contrato.propietario)
-        rows.push(
-          console.log("respuesta de la promesa: "+responseLocal.contrato.propietario)
-          //createData(responseLocal.contrato.propietario, responseLocal.contrato.num_contrato, responseLocal.contrato.ubicacion, responseLocal.contrato.colonia, responseLocal.contrato.telefono, 3.99)
-        )
-      }).catch(console.log("Hubo un error en la promesa"))
-
-
-    })*/
-
+      rows.push(createData(it.contrato.propietario, it.contrato.num_contrato, it.contrato.ubicacion, it.contrato.colonia, it.contrato.telefono, 3.99))  
+      if(contadorForeach==contratosCache.length){
+        setActualizaRender(true);
+      }
+    })
   
   }, [] );
 
+    
 
   return (
     <TableContainer component={Paper}>
@@ -311,7 +322,7 @@ export default function CollapsibleTable() {
         </TableHead>
         <TableBody>
           {rows.map((row) => (
-            <Row key={row.name} row={row} />
+            <Row key={row.name} contract={row.contract} row={row} />
           ))}
         </TableBody>
       </Table>
