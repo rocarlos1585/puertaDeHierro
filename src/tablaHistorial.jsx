@@ -209,15 +209,6 @@ function Row(props) {
             setActualizarBandera(true);
           }
         })
-        
-        /*self.setState({
-          detallesPagos: response.data.pagos,
-          fechaActualizacion: response.data.fecha_sincronizacion,
-          titularContrato: response.data.contrato.propietario,
-          domicilio: response.data.contrato.ubicacion
-        })*/
-
-
       })
       .catch(function (response) {
         //handle error
