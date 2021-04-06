@@ -124,6 +124,83 @@ class Galeria extends Component{
                 thumbnailHeight: 768,
                 caption: ""
             },
+            {
+                src: "http://puertadehierroac.mx/imagenes/galeria/15.JPG",
+                thumbnail: "http://puertadehierroac.mx/imagenes/galeria/15.JPG",
+                thumbnailWidth: 1024,
+                thumbnailHeight: 768,
+                caption: ""
+            },
+            {
+                src: "http://puertadehierroac.mx/imagenes/galeria/16.JPG",
+                thumbnail: "http://puertadehierroac.mx/imagenes/galeria/16.JPG",
+                thumbnailWidth: 1024,
+                thumbnailHeight: 768,
+                caption: ""
+            },
+            {
+                src: "http://puertadehierroac.mx/imagenes/galeria/17.JPG",
+                thumbnail: "http://puertadehierroac.mx/imagenes/galeria/17.JPG",
+                thumbnailWidth: 1024,
+                thumbnailHeight: 768,
+                caption: ""
+            },
+            {
+                src: "http://puertadehierroac.mx/imagenes/galeria/18.JPG",
+                thumbnail: "http://puertadehierroac.mx/imagenes/galeria/18.JPG",
+                thumbnailWidth: 1024,
+                thumbnailHeight: 768,
+                caption: ""
+            },
+            {
+                src: "http://puertadehierroac.mx/imagenes/galeria/19.JPG",
+                thumbnail: "http://puertadehierroac.mx/imagenes/galeria/19.JPG",
+                thumbnailWidth: 1024,
+                thumbnailHeight: 768,
+                caption: ""
+            },
+            {
+                src: "http://puertadehierroac.mx/imagenes/galeria/20.JPG",
+                thumbnail: "http://puertadehierroac.mx/imagenes/galeria/20.JPG",
+                thumbnailWidth: 1024,
+                thumbnailHeight: 768,
+                caption: ""
+            },
+            {
+                src: "http://puertadehierroac.mx/imagenes/galeria/21.JPG",
+                thumbnail: "http://puertadehierroac.mx/imagenes/galeria/21.JPG",
+                thumbnailWidth: 1024,
+                thumbnailHeight: 768,
+                caption: ""
+            },
+            {
+                src: "http://puertadehierroac.mx/imagenes/galeria/22.JPG",
+                thumbnail: "http://puertadehierroac.mx/imagenes/galeria/22.JPG",
+                thumbnailWidth: 1024,
+                thumbnailHeight: 768,
+                caption: ""
+            },
+            {
+                src: "http://puertadehierroac.mx/imagenes/galeria/23.JPG",
+                thumbnail: "http://puertadehierroac.mx/imagenes/galeria/23.JPG",
+                thumbnailWidth: 1024,
+                thumbnailHeight: 768,
+                caption: ""
+            },
+            {
+                src: "http://puertadehierroac.mx/imagenes/galeria/24.JPG",
+                thumbnail: "http://puertadehierroac.mx/imagenes/galeria/24.JPG",
+                thumbnailWidth: 1024,
+                thumbnailHeight: 768,
+                caption: ""
+            },
+            {
+                src: "http://puertadehierroac.mx/imagenes/galeria/25.JPG",
+                thumbnail: "http://puertadehierroac.mx/imagenes/galeria/25.JPG",
+                thumbnailWidth: 1024,
+                thumbnailHeight: 768,
+                caption: ""
+            },
         ]
         return(
             <div className="galeriaContainer">

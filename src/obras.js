@@ -52,6 +52,9 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "#373a47",
     display: 'flex',
     height: "100vh",
+    backgroundImage: "url('http://puertadehierroac.mx/imagenes/iconos/fondoWeb.png')",
+    backgroundPosition:"bottom",
+    backgroundSize:"cover",
     
   },
   tabs: {
@@ -98,7 +101,7 @@ export default function Obras() {
     <div className={classes.root}>
         <MenuLog/>
 
-        <Modal
+      <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
         className={classes.modal}
@@ -153,26 +156,6 @@ export default function Obras() {
                     </div>
                 </div> 
                 
-                <div className="card-obras-container">
-                    <h1>RENOVACIÓN DE PARQUE VEHICULAR</h1>
-                    <p>Adquisición de vehículos Toyota Yaris</p>
-                    <div className="card-obras-images-container">
-                        <img onClick={handleOpen} src="http://puertadehierroac.mx/imagenes/parqueVehicular/Imagen24.jpg"/>
-                        <img onClick={handleOpen}src="http://puertadehierroac.mx/imagenes/parqueVehicular/Imagen170.png"/>
-                        <img onClick={handleOpen} src="http://puertadehierroac.mx/imagenes/parqueVehicular/Imagen25.jpg"/>
-                        <img onClick={handleOpen} src="http://puertadehierroac.mx/imagenes/parqueVehicular/Imagen173.png"/>
-                    </div>
-                </div>    
-                
-                <div className="card-obras-container">
-                    <h1>MEJORA EN CENTRO DE MONITOREO</h1>
-                    <p>Se adquirio nuevo equipo para el departamento de monitoreo entre monitores y mobiliario.</p>
-                    <div className="card-obras-images-container">
-                        <img onClick={handleOpen} src="http://puertadehierroac.mx/imagenes/mejoraMonitoreo/Imagen38.jpg"/>
-                        <img onClick={handleOpen} src="http://puertadehierroac.mx/imagenes/mejoraMonitoreo/imagen1.PNG"/>
-                        <img onClick={handleOpen} src="http://puertadehierroac.mx/imagenes//mejoraMonitoreo/imagen2.PNG"/>
-                    </div>
-                </div>  
                 
                 <div className="card-obras-container">
                     <h1>TRABAJOS DE TOTALPLAY</h1>
@@ -189,9 +172,28 @@ export default function Obras() {
         </TabPanel>
         <TabPanel value={value} index={1}>
           <div className="obras-container">
+            
             <div className="card-obras-container">
-              <div>Tab Seguridad</div>
-            </div>
+                    <h1>RENOVACIÓN DE PARQUE VEHICULAR</h1>
+                    <p>Adquisición de vehículos Toyota Yaris</p>
+                    <div className="card-obras-images-container">
+                        
+                        <img onClick={handleOpen}src="http://puertadehierroac.mx/imagenes/parqueVehicular/Imagen170.png"/>
+                        <img onClick={handleOpen} src="http://puertadehierroac.mx/imagenes/parqueVehicular/Imagen25.jpg"/>
+                        <img onClick={handleOpen} src="http://puertadehierroac.mx/imagenes/parqueVehicular/Imagen173.png"/>
+                    </div>
+                </div>    
+                
+                <div className="card-obras-container">
+                    <h1>MEJORA EN CENTRO DE MONITOREO</h1>
+                    <p>Se adquirio nuevo equipo para el departamento de monitoreo entre monitores y mobiliario.</p>
+                    <div className="card-obras-images-container">
+                        <img onClick={handleOpen} src="http://puertadehierroac.mx/imagenes/mejoraMonitoreo/Imagen38.jpg"/>
+                        <img onClick={handleOpen} src="http://puertadehierroac.mx/imagenes/mejoraMonitoreo/imagen1.PNG"/>
+                        <img onClick={handleOpen} src="http://puertadehierroac.mx/imagenes//mejoraMonitoreo/imagen2.PNG"/>
+                    </div>
+                </div>  
+            
           </div>
 
         </TabPanel>

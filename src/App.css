@@ -396,8 +396,17 @@ Note: Beware of modifying this element as it can break the animations - you shou
 
 .directorioContainer{
   width: 100%;
+  height: 100vh;
   padding: 5%;
+  overflow-x: scroll;
   background-color: #333;
+  background-image: url("http://puertadehierroac.mx/imagenes/iconos/fondoWeb.png");
+  background-position:bottom;
+  background-size:cover;
+}
+
+.directorioItemsContainer{
+  background-color: red;
 }
 
 .header{
@@ -509,6 +518,9 @@ Note: Beware of modifying this element as it can break the animations - you shou
 .reglamentosContainer{
   background: #373a47;
   height: 100vh;
+  background-image: url("http://puertadehierroac.mx/imagenes/iconos/fondoWeb.png");
+  background-position:bottom;
+  background-size:cover;
 }
 
 .documentsContainer{
@@ -546,7 +558,9 @@ Note: Beware of modifying this element as it can break the animations - you shou
 .consultaSaldoContainer{
   background-color: #373a47;
   height:100vh;
-  
+  background-image: url("http://puertadehierroac.mx/imagenes/iconos/fondoWeb.png");
+  background-position:bottom;
+  background-size:cover;
 }
 
 .datosCondominoContainer{
@@ -554,10 +568,24 @@ Note: Beware of modifying this element as it can break the animations - you shou
   margin-left: auto;
   margin-right: auto;
   color: white;
-
-  
+  font-size: 0.4px;
 }
 
+.datosCondomino{
+  display: flex;
+}
+
+.datosCondomino h1{
+  font-size: 1.3rem;
+}
+
+.datosCondomino h2{
+  font-size: 1.3rem;
+}
+
+.datosCondomino h3{
+  font-size: 1.3rem;
+}
 .noContratosContainer{
   width: 90%;
   margin:1%;
@@ -610,16 +638,41 @@ Note: Beware of modifying this element as it can break the animations - you shou
   margin-left: 79%;
 }
 
+.totalSaldosContainer{
+  background-color: white;
+  width: 20rem;
+  margin-right: 5%;
+  margin-top: 2%;
+  padding:1%;
+  border-radius: 10px;
+  float: right;
+
+}
+
+.totalSaldosContainer h3{
+  color: #926123;
+  font-family: "Heading-Bold"!important;
+  font-size: 1.3rem;
+}
+
+.totalSaldosContainer a{
+  color:black!important;
+  font-family: monospace;
+}
+
 .galeriaContainer{
   background-color: #373a47;
-
+  height: auto;
+  background-image: url("http://puertadehierroac.mx/imagenes/iconos/fondoWeb.png");
+  background-position:bottom;
+  background-size:cover;
 }
 
 .imagenesContainer{
   padding-top:1%;
   margin-left: 8%;
   width: 80%;
-  height: 100vh;
+  height: auto;
 }
 
 .imagenesContainer h1{

@@ -26,28 +26,33 @@ const useRowStyles = makeStyles({
 });
 
 const columns = [
-  { field: 'id', headerName: 'ID de Pago', width: 150 },
-  { field: 'folio', headerName: 'Folio', width: 130 },
-  { field: 'fecha_pago', headerName: 'Fecha', width: 130 },
-  { field: 'cuota_pagada', headerName: 'Cuota pagada', width: 130 },
-  { field: 'recargos_pagados', headerName: 'Recargos pagados', width: 180 },
-  { field: 'otroscargos_pagados', headerName: 'Otros Cargos', width: 180 },
-  { field: 'total_pago', headerName: 'Total', width: 180 },
+  { field: 'id', headerName: 'No.', width: 80 },
+  { field: 'periodo', headerName: 'Periodo', width: 150 },
+  { field: 'tipo_cuota', headerName: 'Concepto', width: 130 },
+  { field: 'cuotas', headerName: 'Cuota', width: 130 },
+  { field: 'desc_cuotas', headerName: 'Descuentos en Cuotas', width: 130 },
+  { field: 'recgos', headerName: 'Recargos', width: 180 },
+  { field: 'desc_recgos', headerName: 'Descuentos en Recargos', width: 180 },
+
 ];
 
 const rows = [];
 
-function createDataPagos(id, folio, fecha_pago, cuota_pagada, recargos_pagados, otroscargos_pagados, total_pago){
+
+function createDataPagos(id, periodo, tipo_cuota, cuotas, desc_cuotas, recgos, desc_recgos){
   return{
     id,
-    folio,
-    fecha_pago,
-    cuota_pagada,
-    recargos_pagados,
-    otroscargos_pagados,
-    total_pago
+    periodo,
+    tipo_cuota,
+    cuotas,
+    desc_cuotas,
+    recgos,
+    desc_recgos
   }
 }
+
+
+
 
 
 export default function CollapsibleTable() {
@@ -56,24 +61,24 @@ export default function CollapsibleTable() {
   const[actualizaRender, setActualizaRender] = useState(false);
   let contadorForeach = 0;
 
-  useEffect( () =>{  
+  useEffect( () =>{
     let noContrato = sessionStorage.getItem("usuario")
     
-    axios.get(`https://sac14.com.mx/app/puertahierro/contratos/pagos/${noContrato}`, {
+
+
+    axios.get(`https://sac14.com.mx/app/puertahierro/contratos/saldos/${noContrato}`, {
       headers: {
         'X-API-KEY': '1af0d480c2ad84891b106a057b130013'
       }
     })
-    .then(function (response) {
-        console.log("nueva consulta: ")
-        console.log(response.data.pagos)
-        var pagosArray = response.data.pagos
+      .then(function (response) {
+        var saldosArray = response.data.detalles_saldo
 
-        pagosArray.forEach(function(it){
+        saldosArray.forEach(function(it){
           contadorForeach = contadorForeach+1;
 
-          rows.push(createDataPagos(it.id_pago, it.folio, it.fecha_pago, new Intl.NumberFormat('en-IN', { maximumSignificantDigits: 8  }).format(it.cuota_pagada), new Intl.NumberFormat('en-IN', { maximumSignificantDigits: 8  }).format(it.recargos_pagados), new Intl.NumberFormat('en-IN', { maximumSignificantDigits: 8  }).format(it.otroscargos_pagados) , new Intl.NumberFormat('en-IN', { maximumSignificantDigits: 8  }).format(it.total_pago)))  
-          if(contadorForeach==pagosArray.length){
+          rows.push(createDataPagos(contadorForeach, it.periodo, it.tipo_cuota, new Intl.NumberFormat('en-IN', { maximumSignificantDigits: 8  }).format(it.cuotas), new Intl.NumberFormat('en-IN', { maximumSignificantDigits: 8  }).format(it.desc_cuotas), new Intl.NumberFormat('en-IN', { maximumSignificantDigits: 8  }).format(it.recgos) , new Intl.NumberFormat('en-IN', { maximumSignificantDigits: 8  }).format(it.desc_recgos)))  
+          if(contadorForeach==saldosArray.length){
             setActualizaRender(true);
           }
         })
@@ -90,7 +95,7 @@ export default function CollapsibleTable() {
     <div>
 
       {actualizaRender ?
-        <div style={{ height: "75vh", width: '100%', backgroundColor:"white"}}>
+        <div style={{ height: "50vh", width: '100%', backgroundColor:"white"}}>
           <DataGrid rows={rows} columns={columns} pageSize={6} />
         </div>
       : 

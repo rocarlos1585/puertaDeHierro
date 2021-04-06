@@ -14,6 +14,7 @@ class MenuLog extends Component{
           username: '',
           password: '',
           loged:false,
+          logining:false,
           contratosInfo:[],
           redirectToReferrer: false
         };
@@ -50,6 +51,10 @@ class MenuLog extends Component{
     
     login() {
 
+        this.setState({
+            logining:true
+        })
+
         if(this.state.username && this.state.password){
         var formData = new FormData();
         var self = this;
@@ -73,23 +78,29 @@ class MenuLog extends Component{
                 
                 
                 sessionStorage.setItem("auth", "true")
-                sessionStorage.setItem("contratos", contratosString);
+                sessionStorage.setItem("usuario", response.data.usuario.usuario);
 
                 self.setState({
                     loged:true,
-                    contratosInfo:response.data.usuario.contratos
+                    contratosInfo:response.data.usuario.contratos,
+                    logining:false
                 },() => {   self.getContratosInfo()    })
 
                 
             }else{
                 alert("El Usuario o la Contraseña son incorrectos")
+                self.setState({
+                    logining:false
+                })
             }
-
-    
         })
         .catch(function (response) {
             //handle error
             console.log(response)
+            alert("El Usuario o la Contraseña son incorrectos")
+            self.setState({
+                logining:false
+            })
         });
         }
     }
@@ -111,43 +122,65 @@ class MenuLog extends Component{
 
 
     render() {
-
-        if(sessionStorage.getItem("auth")=="true"){
+        if(this.state.logining){
             return(
-                <div>
-                    <Menu disableAutoFocus  burgerButtonClassName={ "menuLogin" }>
-                        <div>
-                            <img className="logoMenu" src="http://puertadehierroac.mx/imagenes/iconos/logoBlancoLogin.png"/>
+                <Menu disableAutoFocus isOpen={true} burgerButtonClassName={ "menuLogin" }>
+                    <div>
+                        <div class="ui active transition visible dimmer">      
+                            <div class="ui text loader">Cargando</div> 
                         </div>
-                        <a id="home" className="menu-item" href="/">Inicio</a>
-                        <a id="home" className="menu-item" href="/reglamentos">Reglamentos</a>
-                        <a id="about" className="menu-item" href="/consultaSaldo">Consulta de Saldo</a>
-                        <a id="about" className="menu-item" href="/historialPagos">Historial de Pagos</a>
-                        <a id="contact" className="menu-item" href="/directorio">Directorio Telefonico</a>
-                        <a id="contact" className="menu-item" href="/galeria">Galeria</a>
-                        <a id="contact" className="menu-item" href="/obras">Avances</a>
-                        <a className="logout-link" onClick={this.logout} >Cerrar Sesion  <Icon size="large" name='log out' /> </a>
-                    </Menu> 
-                </div>
+                    </div>
+                </Menu>
             );
+
         }else{
-  
-            return (
-                <div>
-                    <Menu disableAutoFocus  burgerButtonClassName={ "menuLogin" }>
-                        <div className="loginForm">
-                            <div className="inputsContainer">
-                                <img className="logoPuertaLogin" src="http://puertadehierroac.mx/imagenes/iconos/logoBlancoLogin.png"/>
-                                
-                                <input onChange={this.onChange} name="username" type="text" placeholder="usuario"/>
-                                <input onChange={this.onChange} name="password" type="password" placeholder="contraseña"/>
-                                <button onClick={this.login}>INGRESAR</button>
+            if(sessionStorage.getItem("auth")=="true"){
+                return(
+                    <div>
+                        <Menu disableAutoFocus isOpen={true} burgerButtonClassName={ "menuLogin" }>
+                            <div>
+                                <img className="logoMenu" src="http://puertadehierroac.mx/imagenes/iconos/logoBlancoLogin.png"/>
                             </div>
-                        </div>
-                    </Menu>
-                </div>
-            );
+                            <a id="home" className="menu-item" href="/">Inicio</a>
+                            
+                            <a id="about" className="menu-item" href="/consultaSaldo">Consulta de Saldo</a>
+                            <a id="about" className="menu-item" href="/historialPagos">Historial de Pagos</a>
+                            <a id="contact" className="menu-item" href="/obras">Avances</a>
+                            <a id="contact" className="menu-item" href="/directorio">Directorio Telefonico</a>
+                            <a id="contact" className="menu-item" href="/galeria">Galeria</a>
+                            <a id="home" className="menu-item" href="/reglamentos">Reglamentos</a>
+                            <a className="logout-link" onClick={this.logout} >Cerrar Sesion  <Icon size="large" name='log out' /> </a>
+                        </Menu> 
+                    </div>
+                );
+            }else{
+    
+                return (
+                    <div>
+                        <Menu disableAutoFocus isOpen={true} burgerButtonClassName={ "menuLogin" }>
+                            <div className="loginForm">
+                                <div className="inputsContainer">
+                                    <img className="logoPuertaLogin" src="http://puertadehierroac.mx/imagenes/iconos/logoBlancoLogin.png"/>
+                                    
+                                    <input onChange={this.onChange} name="username" type="text" placeholder="usuario"/>
+                                    <input onChange={this.onChange} name="password" type="password" placeholder="contraseña"/>
+                                    <button onClick={this.login}>INGRESAR</button>
+                                </div>
+                            </div>
+                        </Menu>
+                    </div>
+                );
+            }
+
+
+
         }
+
+
+
+
+
+
     }
 }
 

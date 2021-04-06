@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {Redirect} from 'react-router-dom';
 import  MenuLog  from './menu.js'
 import axios from 'axios';
+import CollapsibleTable from './tablaSaldos'
 import { Dropdown } from 'semantic-ui-react'
 import './App.css';
 
@@ -19,15 +20,18 @@ class ConsultaSaldo extends Component{
         detallesSaldo:[],
         fechaActualizacion:"",
         titularContrato:"",
-        domicilio:""
+        domicilio:"",
+
+        cuotasTotal:"",
+        recargosTotal:"",
+        otrosRecargosTotal:"",
+        saldoFavorTotal:"",
+        total:"",
+
     };
-    this.prueba = this.prueba.bind(this);
-    this.onValueChange = this.onValueChange.bind(this);
+
   }
 
-  prueba(e){
-    console.log(this.state.contratos)
-  }
 
   onValueChange(event) {
 
@@ -63,14 +67,33 @@ class ConsultaSaldo extends Component{
   }
 
   componentWillMount(){
-    //alert(sessionStorage.getItem("contratos"))
-    var contratosParse=JSON.parse(sessionStorage.getItem("contratos"))
+    let noContrato = sessionStorage.getItem("usuario")
+    var self = this
 
-    this.setState({
-      contratos : contratosParse
+    axios.get(`https://sac14.com.mx/app/puertahierro/contratos/saldos/${noContrato}`, {
+      headers: {
+          'X-API-KEY': '1af0d480c2ad84891b106a057b130013'
+      } 
     })
+    .then(function (response) {
+      self.setState({
+        detallesPagos: response.data.pagos,
+        fechaActualizacion: response.data.fecha_sincronizacion,
+        titularContrato: response.data.contrato.propietario,
+        domicilio: response.data.contrato.ubicacion,
 
-    console.log("aqui imprimo el state: "+this.state.contratos)
+        cuotasTotal: response.data.saldos.cuotas,
+        recargosTotal: response.data.saldos.recargos,
+        otrosRecargosTotal: response.data.saldos.otros_cargos,
+        saldoFavorTotal:response.data.saldos.saldo_favor,
+        total: response.data.saldos.saldo_total
+      })
+
+    })
+    .catch(function (response) {
+      //handle error
+      console.log(response)
+    });
     
   }
 
@@ -80,83 +103,32 @@ class ConsultaSaldo extends Component{
 
         <div className="consultaSaldoContainer">
 
-          <MenuLog/>
+          <MenuLog />
           <div>
 
-            <div className = "datosCondominoContainer">
-            <p>Titular: {this.state.titularContrato} </p>
-            <p>Domicilio: {this.state.domicilio}</p>
-          </div>
+            <div className="datosCondominoContainer">
+              <h1>Saldos</h1>
 
-
-          {this.state.contratos.length > 1 ? 
-            <div className="noContratosContainer">
-              Seleccione un numero de contrato:
-              {this.state.contratos.map((it)=>(
-                <label>
-                  <input type="radio" value={it.contrato} checked={this.state.selectedOption === it.contrato} onChange={this.onValueChange} />
-                  {it.contrato}
-                </label>
-
-              ))}
-
+              <div className="datosCondomino">
+                <h1>Titular: {this.state.titularContrato} &nbsp; |  &nbsp;</h1>
+                <h2>Domicilio: {this.state.domicilio} &nbsp; |  &nbsp; </h2>
+                <h3>Ultima Actualizacion: {this.state.fechaActualizacion} </h3>
+              </div>
             </div>
 
-          :
 
-            <h1>numero de contrato</h1>
-          }
+            <div className="tablaDatosContainer">
+              <CollapsibleTable />
+            </div>
 
-
-          <table className="tablaDatos">
-            <thead>
-              <tr>
-                <th>Periodo</th>
-                <th>Concepto</th>
-                <th>Importe</th>
-                <th>Recargos</th>
-
-              </tr>
-            </thead>
-            
-            {this.state.detallesSaldo.length != 0 ? 
-
-              <tbody>
-                {this.state.detallesSaldo.map((it)=>(
-                  <tr>
-                    <td>{it.periodo}</td>
-                    <td>{it.concepto}</td>
-                    <td>${new Intl.NumberFormat('en-IN', { maximumSignificantDigits: 8  }).format(it.cuotas)}</td>           
-                    <td>${new Intl.NumberFormat('en-IN', { maximumSignificantDigits: 8  }).format(it.recgos)}</td>
-
-                  </tr>
-                ))}
-              </tbody>
-            :
-              
-              <tbody>
-                <tr>
-                  <td>Este contrato no presenta adeudo</td>
-                  <td>---</td>
-                  <td>$0.00</td>
-                  <td>$0.00</td>
-
-                </tr>
-
-              </tbody>
-            }
-          </table>
-
-          {/*<div className = "datosTotalContainer">
-            <p>Cuotas de Mantenimiento: $0.00</p>
-            <p>Cuotas de Agua: $0.00</p>
-            <p>Recargos: $0.00</p>
-            <p>Gastos: $0.00</p>
-            <p>Otros Cargos: $0.00</p>
-            <p>Saldo a Favor(-): $0.00</p>
-            <p>Total: $0.00</p>
-          </div>*/}
-        </div>
+            <div className="totalSaldosContainer">
+              <h3>Cuotas: <a>{new Intl.NumberFormat('en-IN', { maximumSignificantDigits: 8  }).format(this.state.cuotasTotal)}</a></h3>
+              <h3>Recargos: <a>{new Intl.NumberFormat('en-IN', { maximumSignificantDigits: 8  }).format(this.state.recargosTotal) }</a></h3>
+              <h3>Otros Recargos: <a>{new Intl.NumberFormat('en-IN', { maximumSignificantDigits: 8  }).format(this.state.otrosRecargosTotal)}</a></h3>
+              <h3>Saldo a Favor: <a>{new Intl.NumberFormat('en-IN', { maximumSignificantDigits: 8  }).format(this.state.saldoFavorTotal)}</a></h3>
+              <h3>Total: <a>{new Intl.NumberFormat('en-IN', { maximumSignificantDigits: 8  }).format(this.state.total)}</a></h3> 
+            </div>
+          </div>
 
 
         </div>

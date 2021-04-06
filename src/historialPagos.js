@@ -34,7 +34,7 @@ class HistorialPagos extends Component {
 
     var self = this
 
-    axios.get(`https://sac14.com.mx/app/puertahierro/contratos/pagos/${event.target.value}`, {
+    axios.get(`https://sac14.com.mx/app/puertahierro/contratos/pagos/${sessionStorage.getItem("usuario")}`, {
       headers: {
         'X-API-KEY': '1af0d480c2ad84891b106a057b130013'
       }
@@ -66,6 +66,30 @@ class HistorialPagos extends Component {
   componentWillMount() {
     //alert(sessionStorage.getItem("contratos"))
     var contratosParse = JSON.parse(sessionStorage.getItem("contratos"))
+    var noContrato = sessionStorage.getItem("usuario")
+    var self = this
+
+    axios.get(`https://sac14.com.mx/app/puertahierro/contratos/pagos/${noContrato}`, {
+      headers: {
+        'X-API-KEY': '1af0d480c2ad84891b106a057b130013'
+      }
+    })
+      .then(function (response) {
+        console.log(response.data)
+        
+        self.setState({
+          detallesPagos: response.data.pagos,
+          fechaActualizacion: response.data.fecha_sincronizacion,
+          titularContrato: response.data.contrato.propietario,
+          domicilio: response.data.contrato.ubicacion
+        })
+
+
+      })
+      .catch(function (response) {
+        //handle error
+        console.log(response)
+      });
 
     this.setState({
       contratos: contratosParse
@@ -86,6 +110,12 @@ class HistorialPagos extends Component {
 
             <div className="datosCondominoContainer">
               <h1>Historial de Pagos</h1>
+
+              <div className="datosCondomino">
+                <h1>Titular: {this.state.titularContrato} &nbsp; |  &nbsp;</h1>
+                <h2>Domicilio: {this.state.domicilio} &nbsp; |  &nbsp; </h2>
+                <h3>Ultima Actualizacion: {this.state.fechaActualizacion} </h3>
+              </div>
             </div>
 
 
