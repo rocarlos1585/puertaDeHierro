@@ -11,6 +11,7 @@ import Fade from '@material-ui/core/Fade';
 import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
 import { Icon } from 'semantic-ui-react'
 import MenuLog from './menu';
+import AvancesCard from './avancesCard'
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -81,12 +82,10 @@ export default function Obras() {
   const [value, setValue] = React.useState(0);
   const [open, setOpen] = React.useState(false);
   const [imgModal, setImgModal] = React.useState("")
-    
+
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-
-  
 
   const handleOpen = (e) => {
     setOpen(true);
@@ -101,18 +100,18 @@ export default function Obras() {
     <div className={classes.root}>
         <MenuLog/>
 
-      <Modal
-        aria-labelledby="transition-modal-title"
-        aria-describedby="transition-modal-description"
-        className={classes.modal}
-        open={open}
-        onClose={handleClose}
-        closeAfterTransition
-        BackdropComponent={Backdrop}
-        BackdropProps={{
-          timeout: 500,
-        }}
-      >
+        <Modal
+          aria-labelledby="transition-modal-title"
+          aria-describedby="transition-modal-description"
+          className={classes.modal}
+          open={open}
+          onClose={handleClose}
+          closeAfterTransition
+          BackdropComponent={Backdrop}
+          BackdropProps={{
+            timeout: 500,
+          }}
+        >
         <Fade in={open}>
           <div className={classes.paper}>
             <h2 id="transition-modal-title"></h2>
@@ -144,56 +143,68 @@ export default function Obras() {
 
         </Tabs>
         <TabPanel value={value} index={0}>
-            <div className="obras-container">
-                <div className="card-obras-container">
-                    <h1>ILUMINACIÓN SOBRE BOULEVARD</h1>
-                    <p>Panorama general de la zona iluminada del fraccionamiento sobre el camellón del boulevard</p>
-                    <div className="card-obras-images-container">
-                        <img onClick={handleOpen} src="http://puertadehierroac.mx/imagenes/lucesBoulevard/Imagen9.jpg"/>
-                        <img onClick={handleOpen} src="http://puertadehierroac.mx/imagenes/lucesBoulevard/Imagen10.jpg"/>
-                        <img onClick={handleOpen} src="http://puertadehierroac.mx/imagenes/lucesBoulevard/Imagen11.jpg"/>
-                        <img onClick={handleOpen} src="http://puertadehierroac.mx/imagenes/lucesBoulevard/Imagen12.jpg"/>
-                    </div>
-                </div> 
-                
-                
-                <div className="card-obras-container">
-                    <h1>TRABAJOS DE TOTALPLAY</h1>
-                    <p>Con el objetivo de mejorar la covertura del servicio se realizaron trabajos en la infraestructura de TotalPlay en los cotos de Barcelona, Sevilla, Galicia, León y Andalucía</p>
-                    <div className="card-obras-images-container">
-                        <img onClick={handleOpen} src="http://puertadehierroac.mx/imagenes/trabajosTotalplay/Imagen34.jpg"/>
-                        <img onClick={handleOpen} src="http://puertadehierroac.mx/imagenes/trabajosTotalplay/Imagen35.png"/>
-                        <img onClick={handleOpen} src="http://puertadehierroac.mx/imagenes/trabajosTotalplay/Imagen36.jpg"/>
-                    </div>
-                </div> 
 
+
+          
+            <div className="obras-container">
+
+
+              <div className="cardsRow-container">
+                <AvancesCard
+                  title="NUEVO INGRESO PEATONAL ACUEDUCTO"
+                  date="Marzo, 2021"
+                  image="http://puertadehierroac.mx/imagenes/torniquetes/tor-2.JPG"
+                  image2="http://puertadehierroac.mx/imagenes/torniquetes/tor-4.JPG"
+                  image3="http://puertadehierroac.mx/imagenes/torniquetes/tor-3.JPG"
+                  description="Con el objetivo de mejorar la seguridad y velocidad del ingreso de personal en el accceso de acueducto, fueron instalados 3 torniquetes con lectoras de credenciales."
+                />
+
+                <AvancesCard
+                  title="ILUMINACIÓN SOBRE BOULEVARD"
+                  date="2020"
+                  image="http://puertadehierroac.mx/imagenes/lucesBoulevard/Imagen9.jpg"
+                  image2="http://puertadehierroac.mx/imagenes/lucesBoulevard/Imagen10.jpg"
+                  image3="http://puertadehierroac.mx/imagenes/lucesBoulevard/Imagen11.jpg"
+                  description="Panorama general de la zona iluminada del fraccionamiento sobre el camellón del boulevard"
+                />
+              </div>  
+
+              <div className="cardsRow-container">
+                <AvancesCard
+                  title="TRABAJOS DE TOTALPLAY"
+                  date="2020"
+                  image="http://puertadehierroac.mx/imagenes/trabajosTotalplay/Imagen34.jpg"
+                  image2="http://puertadehierroac.mx/imagenes/trabajosTotalplay/Imagen35.png"
+                  image3="http://puertadehierroac.mx/imagenes/trabajosTotalplay/Imagen36.jpg"
+                  description="Con el objetivo de mejorar la covertura del servicio se realizaron trabajos en la infraestructura de TotalPlay en los cotos de Barcelona, Sevilla, Galicia, León y Andalucía"
+                />
+
+              </div> 
             </div>
             
         </TabPanel>
         <TabPanel value={value} index={1}>
           <div className="obras-container">
-            
-            <div className="card-obras-container">
-                    <h1>RENOVACIÓN DE PARQUE VEHICULAR</h1>
-                    <p>Adquisición de vehículos Toyota Yaris</p>
-                    <div className="card-obras-images-container">
-                        
-                        <img onClick={handleOpen}src="http://puertadehierroac.mx/imagenes/parqueVehicular/Imagen170.png"/>
-                        <img onClick={handleOpen} src="http://puertadehierroac.mx/imagenes/parqueVehicular/Imagen25.jpg"/>
-                        <img onClick={handleOpen} src="http://puertadehierroac.mx/imagenes/parqueVehicular/Imagen173.png"/>
-                    </div>
-                </div>    
-                
-                <div className="card-obras-container">
-                    <h1>MEJORA EN CENTRO DE MONITOREO</h1>
-                    <p>Se adquirio nuevo equipo para el departamento de monitoreo entre monitores y mobiliario.</p>
-                    <div className="card-obras-images-container">
-                        <img onClick={handleOpen} src="http://puertadehierroac.mx/imagenes/mejoraMonitoreo/Imagen38.jpg"/>
-                        <img onClick={handleOpen} src="http://puertadehierroac.mx/imagenes/mejoraMonitoreo/imagen1.PNG"/>
-                        <img onClick={handleOpen} src="http://puertadehierroac.mx/imagenes//mejoraMonitoreo/imagen2.PNG"/>
-                    </div>
-                </div>  
-            
+
+              <div className="cardsRow-container">
+                <AvancesCard
+                  title="RENOVACIÓN DE PARQUE VEHICULAR"
+                  date="2020"
+                  image="http://puertadehierroac.mx/imagenes/parqueVehicular/Imagen170.png"
+                  image2="http://puertadehierroac.mx/imagenes/parqueVehicular/Imagen25.jpg"
+                  image3="http://puertadehierroac.mx/imagenes/parqueVehicular/Imagen173.png"
+                  description="Adquisición de vehículos Toyota Yaris"
+                />
+
+                <AvancesCard
+                  title="MEJORA EN CENTRO DE MONITOREO"
+                  date="2020"
+                  image="http://puertadehierroac.mx/imagenes/mejoraMonitoreo/Imagen38.jpg"
+                  image2="http://puertadehierroac.mx/imagenes/mejoraMonitoreo/imagen1.PNG"
+                  image3="http://puertadehierroac.mx/imagenes//mejoraMonitoreo/imagen2.PNG"
+                  description="Se adquirio nuevo equipo para el departamento de monitoreo entre monitores y mobiliario."
+                />
+              </div> 
           </div>
 
         </TabPanel>
@@ -207,139 +218,136 @@ export default function Obras() {
         <TabPanel value={value} index={2}>
             <div className="obras-container">
 
-                <div className="card-obras-container">
-                    <h1>MANTENIMIENTO A PALMERAS</h1>
-                    <p>Se realizaron diversos trabajos en las palmas del fraccionamiento para su optima conservación</p>
-                    <div className="card-obras-images-container">
-                        <img onClick={handleOpen} src="http://puertadehierroac.mx/imagenes/mttoPalmeras/Imagen53.png"/>
-                        <img onClick={handleOpen} src="http://puertadehierroac.mx/imagenes/mttoPalmeras/Imagen54.png"/>
-                        <img onClick={handleOpen} src="http://puertadehierroac.mx/imagenes/mttoPalmeras/Imagen55.png"/>
-                        <img onClick={handleOpen} src="http://puertadehierroac.mx/imagenes/mttoPalmeras/Imagen56.png"/>
-                    </div>
-                </div>
-
-                <div className="card-obras-container">
-                    <h1>PODA DE ARBOLES SOBRE AV. ACUEDUCTO</h1>
-                    <p>Se podaron los arboles que estan sobre la banqueta en av. Acueduto</p>
-                    <div className="card-obras-images-container">
-                        <img onClick={handleOpen} src="http://puertadehierroac.mx/imagenes/podaArboles/Imagen62.png"/>
-                        <img onClick={handleOpen} src="http://puertadehierroac.mx/imagenes/podaArboles/Imagen63.png"/>
-                        <img onClick={handleOpen} src="http://puertadehierroac.mx/imagenes/podaArboles/Imagen64.png"/>
-                        <img onClick={handleOpen} src="http://puertadehierroac.mx/imagenes/podaArboles/Imagen65.png"/>
-                    </div>
-                </div>
-
-                <div className="card-obras-container">
-                    <h1>FERTILIZACIÓN A PLANTAS DE HORNATO</h1>
-                    <p>Se agregó fertilizante a todas las plantas de hornato</p>
-                    <div className="card-obras-images-container">
-                        <img onClick={handleOpen} src="http://puertadehierroac.mx/imagenes/plantasHornato/Imagen66.jpg"/>
-                        <img onClick={handleOpen} src="http://puertadehierroac.mx/imagenes/plantasHornato/Imagen67.jpg"/>
-                    </div>
-                </div>
-
-                <div className="card-obras-container">
-                    <h1>NUTRIENTES EN ÁRBOLES</h1>
-                    <p>En el mes de junio se aplicaron nutrientes y fertilizantes a todos los árboles.</p>
-                    <div className="card-obras-images-container">
-                        <img onClick={handleOpen} src="http://puertadehierroac.mx/imagenes/nutrientesArboles/Imagen68.png"/>
-                        <img onClick={handleOpen} src="http://puertadehierroac.mx/imagenes/nutrientesArboles/Imagen69.png"/>
-                        <img onClick={handleOpen} src="http://puertadehierroac.mx/imagenes/nutrientesArboles/Imagen70.png"/>
-                        <img onClick={handleOpen} src="http://puertadehierroac.mx/imagenes/nutrientesArboles/Imagen71.png"/>
-
-                    </div>
-                </div>
-
-                <div className="card-obras-container">
-                    <h1>PODAS A CASAS ABANDONADAS </h1>
-                    <p>Se llevo a cabo la poda en casas abandonadas con cargo a sus cuotas de mantenimiento</p>
-                    <div className="card-obras-images-container">
-                        <img onClick={handleOpen} src="http://puertadehierroac.mx/imagenes/podaCasasAbandonadas/Imagen84.png"/>
-                        <img onClick={handleOpen} src="http://puertadehierroac.mx/imagenes/podaCasasAbandonadas/Imagen85.png"/>
-                    </div>
-                </div>
-
-                <div className="card-obras-container">
-                    <h1>MANTENIMIENTO A CAÑADAS - CESPED - CETOS - ARRIATES</h1>
-                    <p>En la zona de las cañadas, se llevo a cabo trabajo de jardineria y mantenimiento</p>
-                    <div className="card-obras-images-container">
-                        <img onClick={handleOpen} src="http://puertadehierroac.mx/imagenes/mttoCanadas/Imagen79.png"/>
-                        <img onClick={handleOpen} src="http://puertadehierroac.mx/imagenes/mttoCanadas/Imagen80.png"/>
-                        <img onClick={handleOpen} src="http://puertadehierroac.mx/imagenes/mttoCanadas/Imagen81.png"/>
-                        <img onClick={handleOpen} src="http://puertadehierroac.mx/imagenes/mttoCanadas/Imagen82.png"/>
-
-                    </div>
-                </div>
 
 
-                
+
+
+              <div className="cardsRow-container">
+                  <AvancesCard
+                    title="MANTENIMIENTO A PALMERAS"
+                    date="2020"
+                    image="http://puertadehierroac.mx/imagenes/mttoPalmeras/Imagen53.png"
+                    image2="http://puertadehierroac.mx/imagenes/mttoPalmeras/Imagen54.png"
+                    image3="http://puertadehierroac.mx/imagenes/mttoPalmeras/Imagen55.png"
+                    description="Se realizaron diversos trabajos en las palmas del fraccionamiento para su optima conservación"
+                  />
+
+                  <AvancesCard
+                    title="PODA DE ARBOLES SOBRE AV. ACUEDUCTO"
+                    date="2020"
+                    image="http://puertadehierroac.mx/imagenes/podaArboles/Imagen62.png"
+                    image2="http://puertadehierroac.mx/imagenes/podaArboles/Imagen63.png"
+                    image3="http://puertadehierroac.mx/imagenes/podaArboles/Imagen64.png"
+                    description="Se podaron los arboles que estan sobre la banqueta en av. Acueduto"
+                  />
+              </div> 
+
+
+
+              <div className="cardsRow-container">
+                  <AvancesCard
+                    title="FERTILIZACIÓN A PLANTAS DE HORNATO"
+                    date="2020"
+                    image="http://puertadehierroac.mx/imagenes/plantasHornato/Imagen66.jpg"
+                    image2="http://puertadehierroac.mx/imagenes/plantasHornato/Imagen67.jpg"
+                    image3="http://puertadehierroac.mx/imagenes/plantasHornato/Imagen67.jpg"
+                    description="Se agregó fertilizante a todas las plantas de hornato"
+                  />
+
+                  <AvancesCard
+                    title="NUTRIENTES EN ÁRBOLES"
+                    date="2020"
+                    image="http://puertadehierroac.mx/imagenes/nutrientesArboles/Imagen68.png"
+                    image2="http://puertadehierroac.mx/imagenes/nutrientesArboles/Imagen69.png"
+                    image3="http://puertadehierroac.mx/imagenes/nutrientesArboles/Imagen70.png"
+                    description="En el mes de junio se aplicaron nutrientes y fertilizantes a todos los árboles."
+                  />
+              </div> 
+
+
+              <div className="cardsRow-container">
+                  <AvancesCard
+                    title="PODAS A CASAS ABANDONADAS"
+                    date="2020"
+                    image="http://puertadehierroac.mx/imagenes/podaCasasAbandonadas/Imagen84.png"
+                    image2="http://puertadehierroac.mx/imagenes/podaCasasAbandonadas/Imagen85.png"
+                    image3="http://puertadehierroac.mx/imagenes/podaCasasAbandonadas/Imagen85.png"
+                    description="Se llevo a cabo la poda en casas abandonadas con cargo a sus cuotas de mantenimiento"
+                  />
+
+                  <AvancesCard
+                    title="MANTENIMIENTO A CAÑADAS - CESPED - CETOS - ARRIATES"
+                    date="2020"
+                    image="http://puertadehierroac.mx/imagenes/mttoCanadas/Imagen79.png"
+                    image2="http://puertadehierroac.mx/imagenes/mttoCanadas/Imagen80.png"
+                    image3="http://puertadehierroac.mx/imagenes/mttoCanadas/Imagen81.png"
+                    description="En la zona de las cañadas, se llevo a cabo trabajo de jardineria y mantenimiento"
+                  />
+              </div>                 
             </div> 
         </TabPanel>
+
+
         <TabPanel value={value} index={3}>
             <div className="obras-container">
 
 
-            <div className="card-obras-container">
-                    <h1>REPARACIÓN DE LOSAS DE CONCRETO</h1>
-                    <p>Sobre el boulevard se realizo la reparacion de algunas losas de concreto que se encontraban en mal estado </p>
-                    <div className="card-obras-images-container">
-                        <img onClick={handleOpen} src="http://puertadehierroac.mx/imagenes/losasConcreto/Imagen121.jpg"/>
-                        <img onClick={handleOpen} src="http://puertadehierroac.mx/imagenes/losasConcreto/Imagen122.jpg"/>
-                        <img onClick={handleOpen} src="http://puertadehierroac.mx/imagenes/losasConcreto/Imagen123.jpg"/>
-                        <img onClick={handleOpen} src="http://puertadehierroac.mx/imagenes/losasConcreto/Imagen124.jpg"/>
-                    </div>
-                </div>
+              <div className="cardsRow-container">
+                  <AvancesCard
+                    title="REPARACIÓN DE LOSAS DE CONCRETO"
+                    date="2020"
+                    image="http://puertadehierroac.mx/imagenes/losasConcreto/Imagen121.jpg"
+                    image2="http://puertadehierroac.mx/imagenes/losasConcreto/Imagen122.jpg"
+                    image3="http://puertadehierroac.mx/imagenes/losasConcreto/Imagen123.jpg"
+                    description="Sobre el boulevard se realizo la reparacion de algunas losas de concreto que se encontraban en mal estado "
+                  />
 
-                <div className="card-obras-container">
-                    <h1>RESTAURACIÓN DE PIPA</h1>
-                    <p>Se renovo y restauro la pipa de agua</p>
-                    <div className="card-obras-images-container">
-                        <img onClick={handleOpen} src="http://puertadehierroac.mx/imagenes/restPipa/Imagen107.jpg"/>
-                        <img onClick={handleOpen} src="http://puertadehierroac.mx/imagenes/restPipa/Imagen108.png"/>
-                    </div>
-                </div>
-
-                
+                  <AvancesCard
+                    title="RESTAURACIÓN DE PIPA"
+                    date="2020"
+                    image="http://puertadehierroac.mx/imagenes/restPipa/Imagen107.jpg"
+                    image2="http://puertadehierroac.mx/imagenes/restPipa/Imagen108.png"
+                    image3="http://puertadehierroac.mx/imagenes/restPipa/Imagen108.png"
+                    description="Se renovo y restauro la pipa de agua"
+                  />
+              </div> 
 
 
-                <div className="card-obras-container">
-                    <h1>REPARACION DE BANQUETA DAÑADA</h1>
-                    <p>La banqueta agrietada se termino de quitar y se coloco concreto nuevo</p>
-                    <div className="card-obras-images-container">
-                        <img onClick={handleOpen} src="http://puertadehierroac.mx/imagenes/reparacionBanqueta/Imagen150.png"/>
-                        <img onClick={handleOpen} src="http://puertadehierroac.mx/imagenes/reparacionBanqueta/Imagen151.png"/>
-                        <img onClick={handleOpen} src="http://puertadehierroac.mx/imagenes/reparacionBanqueta/Imagen152.png"/>
-                        <img onClick={handleOpen} src="http://puertadehierroac.mx/imagenes/reparacionBanqueta/Imagen153.png"/>
-                    </div>
-                </div>
+              <div className="cardsRow-container">
+                  <AvancesCard
+                    title="REPARACION DE BANQUETA DAÑADA"
+                    date="2020"
+                    image="http://puertadehierroac.mx/imagenes/reparacionBanqueta/Imagen150.png"
+                    image2="http://puertadehierroac.mx/imagenes/reparacionBanqueta/Imagen151.png"
+                    image3="http://puertadehierroac.mx/imagenes/reparacionBanqueta/Imagen152.png"
+                    description="La banqueta agrietada se termino de quitar y se coloco concreto nuevo "
+                  />
 
-                <div className="card-obras-container">
-                    <h1>FUMIGACIÓN CONTRA EL DENGUE</h1>
-                    <p>En los meses de Agosto y Octubre se llevo a cabo una profunda fumigacion en contra del mosquito del dengue </p>
-                    <div className="card-obras-images-container">
-                        <img onClick={handleOpen} src="http://puertadehierroac.mx/imagenes/fumigacionDengue/Imagen86.png"/>
-                        <img onClick={handleOpen} src="http://puertadehierroac.mx/imagenes/fumigacionDengue/Imagen87.png"/>
-                        <img onClick={handleOpen} src="http://puertadehierroac.mx/imagenes/fumigacionDengue/Imagen88.png"/>
-                        <img onClick={handleOpen} src="http://puertadehierroac.mx/imagenes/fumigacionDengue/Imagen89.png"/>
-                    </div>
-                </div>
-
+                  <AvancesCard
+                    title="FUMIGACIÓN CONTRA EL DENGUE"
+                    date="2020"
+                    image="http://puertadehierroac.mx/imagenes/fumigacionDengue/Imagen86.png"
+                    image2="http://puertadehierroac.mx/imagenes/fumigacionDengue/Imagen87.png"
+                    image3="http://puertadehierroac.mx/imagenes/fumigacionDengue/Imagen88.png"
+                    description="En los meses de Agosto y Octubre se llevo a cabo una profunda fumigacion en contra del mosquito del dengue "
+                  />
+              </div> 
             </div>
         </TabPanel>
         <TabPanel value={value} index={4}>
             <div className="obras-container">
+                <div className="cardsRow-container">
 
 
-                <div className="card-obras-container">
-                    <h1>ENTREGA DE UNIFORMES</h1>
-                    <p>En compromiso con todos nuestros trabajoders se les hizo entrega de nuevos uniformes.</p>
-                    <div className="card-obras-images-container">
-                        <img onClick={handleOpen} src="http://puertadehierroac.mx/imagenes/entregaUniformes/Imagen17.png"/>
-                        <img onClick={handleOpen} src="http://puertadehierroac.mx/imagenes/entregaUniformes/Imagen18.png"/>
-                        <img onClick={handleOpen} src="http://puertadehierroac.mx/imagenes/entregaUniformes/Imagen19.png"/>
-                        <img onClick={handleOpen} src="http://puertadehierroac.mx/imagenes/entregaUniformes/Imagen20.png"/>
-                    </div>
-                </div>
+                    <AvancesCard
+                      title="ENTREGA DE UNIFORMES"
+                      date="2020"
+                      image="http://puertadehierroac.mx/imagenes/entregaUniformes/Imagen17.png"
+                      image2="http://puertadehierroac.mx/imagenes/entregaUniformes/Imagen18.png"
+                      image3="http://puertadehierroac.mx/imagenes/entregaUniformes/Imagen19.png"
+                      description="En compromiso con todos nuestros trabajadores se les hizo entrega de nuevos uniformes."
+                    />
+                </div> 
             </div>     
         </TabPanel>
  

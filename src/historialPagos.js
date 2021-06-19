@@ -49,7 +49,6 @@ class HistorialPagos extends Component {
           domicilio: response.data.contrato.ubicacion
         })
 
-
       })
       .catch(function (response) {
         //handle error
@@ -65,6 +64,7 @@ class HistorialPagos extends Component {
 
   componentWillMount() {
     //alert(sessionStorage.getItem("contratos"))
+    
     var contratosParse = JSON.parse(sessionStorage.getItem("contratos"))
     var noContrato = sessionStorage.getItem("usuario")
     var self = this

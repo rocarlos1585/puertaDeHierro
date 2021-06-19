@@ -73,16 +73,23 @@ export default function CollapsibleTable() {
     })
       .then(function (response) {
         var saldosArray = response.data.detalles_saldo
+        console.log(saldosArray)
+        if(saldosArray.length>0){
+          saldosArray.forEach(function(it){
+            contadorForeach = contadorForeach+1;
 
-        saldosArray.forEach(function(it){
-          contadorForeach = contadorForeach+1;
-
-          rows.push(createDataPagos(contadorForeach, it.periodo, it.tipo_cuota, new Intl.NumberFormat('en-IN', { maximumSignificantDigits: 8  }).format(it.cuotas), new Intl.NumberFormat('en-IN', { maximumSignificantDigits: 8  }).format(it.desc_cuotas), new Intl.NumberFormat('en-IN', { maximumSignificantDigits: 8  }).format(it.recgos) , new Intl.NumberFormat('en-IN', { maximumSignificantDigits: 8  }).format(it.desc_recgos)))  
-          if(contadorForeach==saldosArray.length){
-            setActualizaRender(true);
-          }
-        })
+            rows.push(createDataPagos(contadorForeach, it.periodo, it.tipo_cuota, new Intl.NumberFormat('en-IN', { maximumSignificantDigits: 8  }).format(it.cuotas), new Intl.NumberFormat('en-IN', { maximumSignificantDigits: 8  }).format(it.desc_cuotas), new Intl.NumberFormat('en-IN', { maximumSignificantDigits: 8  }).format(it.recgos) , new Intl.NumberFormat('en-IN', { maximumSignificantDigits: 8  }).format(it.desc_recgos)))  
+            if(contadorForeach==saldosArray.length){
+              setActualizaRender(true);
+            }
+          })
+        }else{
+          rows.push(createDataPagos(1, "N/A", "N/A", new Intl.NumberFormat('en-IN', { maximumSignificantDigits: 8  }).format(0), new Intl.NumberFormat('en-IN', { maximumSignificantDigits: 8  }).format(0), new Intl.NumberFormat('en-IN', { maximumSignificantDigits: 8  }).format(0) , new Intl.NumberFormat('en-IN', { maximumSignificantDigits: 8  }).format(0)))
+          setActualizaRender(true)
+        }
       })
+
+
       .catch(function (response) {
         //handle error
         console.log(response)

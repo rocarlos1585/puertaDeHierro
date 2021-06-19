@@ -130,14 +130,12 @@
 
 .misionContainer{
   width: 40%;
-  background-color: ;
   position: absolute;
   margin-top:15%;
 }
 
 .visionContainer{
   width: 40%;
-  background-color: ;
   position: absolute;
   margin-top:15%;
   right:0;
@@ -159,7 +157,6 @@
 
 .serviciosGridContainer{
   width: 100%;
-  background-color: ;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 10px;
@@ -255,7 +252,7 @@
 .tiendas-item-description{
   width: 75%;
   height: auto;
-  background-color: ;
+
 }
  
 /* Color/shape of burger icon bars */
@@ -356,7 +353,6 @@ Note: Beware of modifying this element as it can break the animations - you shou
 
 .loginForm{
   width: 100%;
-  background-color: ;
   outline: none;
 }
 
@@ -417,7 +413,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
 
 .description{
   color:white!important;
-  font-family: ;
+
 }
 
 .enlaceTelefono{
@@ -496,15 +492,26 @@ Note: Beware of modifying this element as it can break the animations - you shou
 
 .card-obras-container h1{
   font-family:sans-serif;
-  color:
 }
 
 .card-obras-container p{
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
 }
 
+.cardsRow-container{
+  display: flex
+}
+
+.d-block.w-100{
+  height: 280px!important;
+}
+
 .card-obras-images-container{
-  background-color:  ;
+
+}
+
+#cardDescription{
+  height: 40px;
 }
 
 .card-obras-images-container img{
@@ -515,7 +522,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
 }
 
 
-.reglamentosContainer{
+.eglamentosContainer{
   background: #373a47;
   height: 100vh;
   background-image: url("http://puertadehierroac.mx/imagenes/iconos/fondoWeb.png");
