@@ -1,15 +1,44 @@
-import React, { Component } from 'react';
+import React, {useEffect} from 'react';
 import {Redirect} from 'react-router-dom';
 import { push as Menu } from 'react-burger-menu'
 import  MenuLog  from './menu.js'
+import axios from 'axios';
 import './App.css';
 import 'semantic-ui-css/semantic.min.css'
 
 
 
 
-class Directorio extends Component {
-  render() {
+export default function Directorio() {
+
+  const [directorio, setDirectorio] = React.useState([])
+  
+  useEffect(() => {
+    const url = 'https://dashboard.puertadehierroac.mx/dashboardScript.php'
+    axios.get(url, {params:{action:"getDirectorio"}}).then(response => response.data)
+    .then((data) => {
+      console.log(data)
+      setDirectorio(data)
+
+
+
+    
+
+      // for(var i=data.length-1; i>=0;){
+
+      //   noticiasFinal.push(data[i])
+
+      //   this.setState({ noticiasArray: noticiasFinal })
+
+      //   i--
+      // }
+
+      // console.log(noticiasFinal)
+
+    })
+  }, []) 
+
+  
     if(sessionStorage.getItem("auth")=="true"){
       return (
         <div>
@@ -19,7 +48,35 @@ class Directorio extends Component {
             <div className="directorioContainer">
               <div class="ui relaxed items">
 
-              <div class="item">
+                {directorio.map(function(item){   
+                      
+                      return<div class="item">
+                              <div class="ui small image">
+                                <img src={item.url_imagen}/>
+                              </div>
+                              <div class="middle aligned content">
+                                <div class="header">{item.lugar}</div>
+                                <div class="description">
+
+                                  {item.departamento1 != ""?(<p>{item.departamento1}: <a className="enlaceTelefono" href={"tel:"+item.telelfono1}> <i aria-hidden="true" class="call icon"></i> {item.telefono1} </a> {"ext:"+item.ext1}</p>):(null)}
+                                  
+                                  {item.departamento2 != ""?(<p>{item.departamento2}: <a className="enlaceTelefono" href={"tel:"+item.telelfono2}> <i aria-hidden="true" class="call icon"></i> {item.telefono2} </a> {"ext:"+item.ext2}</p>):(null)}
+                                  
+                                  {item.departamento3 != ""?(<p>{item.departamento3}: <a className="enlaceTelefono" href={"tel:"+item.telelfono3}> <i aria-hidden="true" class="call icon"></i> {item.telefono3} </a> {"ext:"+item.ext3}</p>):(null)}
+
+                                </div>
+            
+                              </div>
+                            </div>
+                      
+                    }) 
+                  
+                  
+                  }
+
+
+
+                {/* <div class="item">
                   <div class="ui small image">
                     <img src="https://firebasestorage.googleapis.com/v0/b/puertahierro-67dce.appspot.com/o/logoPuerta2.png?alt=media&token=ed22f2a2-5a78-4140-91f4-2adc401ab920"/>
                   </div>
@@ -289,7 +346,7 @@ class Directorio extends Component {
                   </div>
                 </div>
 
-                <div class="item">
+                <div class="item"> 
                   <div class="ui small image">
                     <img src="http://puertadehierroac.mx/imagenes/cotos/valenciaTenerifeCard.jpg"/>
                   </div>
@@ -304,7 +361,7 @@ class Directorio extends Component {
                       </button>
                     </div>
                   </div>
-                </div> 
+                </div> */}
 
 
               </div>
@@ -319,6 +376,5 @@ class Directorio extends Component {
       );
     }
   }
-}
 
-export default Directorio;
+

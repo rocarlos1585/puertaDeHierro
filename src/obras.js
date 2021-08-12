@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import Tabs from '@material-ui/core/Tabs';
@@ -12,6 +12,8 @@ import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timel
 import { Icon } from 'semantic-ui-react'
 import MenuLog from './menu';
 import AvancesCard from './avancesCard'
+import axios from 'axios';
+
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -82,6 +84,12 @@ export default function Obras() {
   const [value, setValue] = React.useState(0);
   const [open, setOpen] = React.useState(false);
   const [imgModal, setImgModal] = React.useState("")
+  const [loaded, setLoaded] = React.useState(false);
+  const [obrasInversion, setObrasInversion] = React.useState([])
+  const [obrasSeguridad, setObrasSeguridad] = React.useState([])
+  const [obrasJardineria, setObrasJardineria] = React.useState([])
+  const [obrasMantenimiento, setObrasMantenimiento] = React.useState([])
+  const [obrasAdministracion, setObrasAdministracion] = React.useState([])
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -95,6 +103,52 @@ export default function Obras() {
   const handleClose = () => {
     setOpen(false);
   };
+
+
+  useEffect(() => {
+    const url = 'https://dashboard.puertadehierroac.mx/dashboardScript.php'
+    axios.get(url, {params:{action:"getAvances"}}).then(response => response.data)
+    .then((data) => {
+      //console.log(data)
+
+      
+        var obrasInversionLocal = data.filter((obra) => obra.area === '1')
+        var obrasSeguridadLocal = data.filter((obra) => obra.area === '2')
+        var obrasJardineriaLocal = data.filter((obra) => obra.area === '3')
+        var obrasMantenimientoLocal = data.filter((obra) => obra.area === '4')
+        var obrasAdministracionLocal = data.filter((obra) => obra.area === '5')
+
+        setObrasInversion(obrasInversionLocal)
+        setObrasSeguridad(obrasSeguridadLocal)
+        setObrasJardineria(obrasJardineriaLocal)
+        setObrasMantenimiento(obrasMantenimientoLocal)
+        setObrasAdministracion(obrasAdministracionLocal)
+
+        setLoaded(true)
+        
+        console.log('obrasInversion: ', obrasInversionLocal)
+        console.log('obrasSeguridad: ', obrasSeguridadLocal)
+        console.log('obrasJardineria: ', obrasJardineriaLocal)
+        console.log('obrasMantenimiento: ', obrasMantenimientoLocal)
+        console.log('obrasAdministracion: ', obrasAdministracionLocal)
+
+    
+
+      // for(var i=data.length-1; i>=0;){
+
+      //   noticiasFinal.push(data[i])
+
+      //   this.setState({ noticiasArray: noticiasFinal })
+
+      //   i--
+      // }
+
+      // console.log(noticiasFinal)
+
+    })
+  }, [])  
+
+  
 
   return (
     <div className={classes.root}>
@@ -124,232 +178,172 @@ export default function Obras() {
 
 
 
+        <>
+        {loaded?(
+          <>
+          <Tabs
+              orientation="vertical"
+              variant="scrollable"
+              value={value}
+              onChange={handleChange}
+              aria-label="Vertical tabs example"
+              className={classes.tabs}
+          >
+              <Tab style={{"font-size":"3vh", "color":"#926123"}} label="Inversión" {...a11yProps(0)} />
+              <Tab style={{"font-size":"3vh", "color":"#926123"}} label="Seguridad" {...a11yProps(1)} />
+              <Tab style={{"font-size":"3vh", "color":"#926123"}} label="Jardineria" {...a11yProps(2)} />
+              <Tab style={{"font-size":"3vh", "color":"#926123"}} label="Mantenimiento" {...a11yProps(3)} />
+              <Tab style={{"font-size":"3vh", "color":"#926123"}} label="Administración" {...a11yProps(4)} />
+
+          </Tabs>
+          <TabPanel value={value} index={0}>
 
 
-
-        <Tabs
-            orientation="vertical"
-            variant="scrollable"
-            value={value}
-            onChange={handleChange}
-            aria-label="Vertical tabs example"
-            className={classes.tabs}
-        >
-            <Tab style={{"font-size":"3vh", "color":"#926123"}} label="Inversión" {...a11yProps(0)} />
-            <Tab style={{"font-size":"3vh", "color":"#926123"}} label="Seguridad" {...a11yProps(1)} />
-            <Tab style={{"font-size":"3vh", "color":"#926123"}} label="Jardineria" {...a11yProps(2)} />
-            <Tab style={{"font-size":"3vh", "color":"#926123"}} label="Mantenimiento" {...a11yProps(3)} />
-            <Tab style={{"font-size":"3vh", "color":"#926123"}} label="Administración" {...a11yProps(4)} />
-
-        </Tabs>
-        <TabPanel value={value} index={0}>
-
-
-          
-            <div className="obras-container">
-
-
-              <div className="cardsRow-container">
-                <AvancesCard
-                  title="NUEVO INGRESO PEATONAL ACUEDUCTO"
-                  date="Marzo, 2021"
-                  image="http://puertadehierroac.mx/imagenes/torniquetes/tor-2.JPG"
-                  image2="http://puertadehierroac.mx/imagenes/torniquetes/tor-4.JPG"
-                  image3="http://puertadehierroac.mx/imagenes/torniquetes/tor-3.JPG"
-                  description="Con el objetivo de mejorar la seguridad y velocidad del ingreso de personal en el accceso de acueducto, fueron instalados 3 torniquetes con lectoras de credenciales."
-                />
-
-                <AvancesCard
-                  title="ILUMINACIÓN SOBRE BOULEVARD"
-                  date="2020"
-                  image="http://puertadehierroac.mx/imagenes/lucesBoulevard/Imagen9.jpg"
-                  image2="http://puertadehierroac.mx/imagenes/lucesBoulevard/Imagen10.jpg"
-                  image3="http://puertadehierroac.mx/imagenes/lucesBoulevard/Imagen11.jpg"
-                  description="Panorama general de la zona iluminada del fraccionamiento sobre el camellón del boulevard"
-                />
-              </div>  
-
-              <div className="cardsRow-container">
-                <AvancesCard
-                  title="TRABAJOS DE TOTALPLAY"
-                  date="2020"
-                  image="http://puertadehierroac.mx/imagenes/trabajosTotalplay/Imagen34.jpg"
-                  image2="http://puertadehierroac.mx/imagenes/trabajosTotalplay/Imagen35.png"
-                  image3="http://puertadehierroac.mx/imagenes/trabajosTotalplay/Imagen36.jpg"
-                  description="Con el objetivo de mejorar la covertura del servicio se realizaron trabajos en la infraestructura de TotalPlay en los cotos de Barcelona, Sevilla, Galicia, León y Andalucía"
-                />
-
-              </div> 
-            </div>
             
-        </TabPanel>
-        <TabPanel value={value} index={1}>
-          <div className="obras-container">
+              <div className="obras-container">
 
-              <div className="cardsRow-container">
-                <AvancesCard
-                  title="RENOVACIÓN DE PARQUE VEHICULAR"
-                  date="2020"
-                  image="http://puertadehierroac.mx/imagenes/parqueVehicular/Imagen170.png"
-                  image2="http://puertadehierroac.mx/imagenes/parqueVehicular/Imagen25.jpg"
-                  image3="http://puertadehierroac.mx/imagenes/parqueVehicular/Imagen173.png"
-                  description="Adquisición de vehículos Toyota Yaris"
-                />
 
-                <AvancesCard
-                  title="MEJORA EN CENTRO DE MONITOREO"
-                  date="2020"
-                  image="http://puertadehierroac.mx/imagenes/mejoraMonitoreo/Imagen38.jpg"
-                  image2="http://puertadehierroac.mx/imagenes/mejoraMonitoreo/imagen1.PNG"
-                  image3="http://puertadehierroac.mx/imagenes//mejoraMonitoreo/imagen2.PNG"
-                  description="Se adquirio nuevo equipo para el departamento de monitoreo entre monitores y mobiliario."
-                />
-              </div> 
-          </div>
-
-        </TabPanel>
+                
+                  <div className="row">
+                  {obrasInversion.map(function(item){   
+                    
+                     return<AvancesCard
+                        title={item.titulo}
+                        date={item.fecha}
+                        image={item.imagen1}
+                        image2={item.imagen2}
+                        image3={item.imagen3}
+                        description={item.descripcion}
+                      />
+                      
+                    }) 
+                  
+                  
+                  }
+                </div>
+              </div>
+              
+          </TabPanel>
 
 
 
-
-
-
-
-        <TabPanel value={value} index={2}>
+          <TabPanel value={value} index={1}>
             <div className="obras-container">
 
 
-
-
-
-              <div className="cardsRow-container">
-                  <AvancesCard
-                    title="MANTENIMIENTO A PALMERAS"
-                    date="2020"
-                    image="http://puertadehierroac.mx/imagenes/mttoPalmeras/Imagen53.png"
-                    image2="http://puertadehierroac.mx/imagenes/mttoPalmeras/Imagen54.png"
-                    image3="http://puertadehierroac.mx/imagenes/mttoPalmeras/Imagen55.png"
-                    description="Se realizaron diversos trabajos en las palmas del fraccionamiento para su optima conservación"
+                              
+              <div className="row">
+              {obrasSeguridad.map(function(item){   
+                
+                return<AvancesCard
+                    title={item.titulo}
+                    date={item.fecha}
+                    image={item.imagen1}
+                    image2={item.imagen2}
+                    image3={item.imagen3}
+                    description={item.descripcion}
                   />
-
-                  <AvancesCard
-                    title="PODA DE ARBOLES SOBRE AV. ACUEDUCTO"
-                    date="2020"
-                    image="http://puertadehierroac.mx/imagenes/podaArboles/Imagen62.png"
-                    image2="http://puertadehierroac.mx/imagenes/podaArboles/Imagen63.png"
-                    image3="http://puertadehierroac.mx/imagenes/podaArboles/Imagen64.png"
-                    description="Se podaron los arboles que estan sobre la banqueta en av. Acueduto"
-                  />
-              </div> 
+                  
+                }) 
 
 
-
-              <div className="cardsRow-container">
-                  <AvancesCard
-                    title="FERTILIZACIÓN A PLANTAS DE HORNATO"
-                    date="2020"
-                    image="http://puertadehierroac.mx/imagenes/plantasHornato/Imagen66.jpg"
-                    image2="http://puertadehierroac.mx/imagenes/plantasHornato/Imagen67.jpg"
-                    image3="http://puertadehierroac.mx/imagenes/plantasHornato/Imagen67.jpg"
-                    description="Se agregó fertilizante a todas las plantas de hornato"
-                  />
-
-                  <AvancesCard
-                    title="NUTRIENTES EN ÁRBOLES"
-                    date="2020"
-                    image="http://puertadehierroac.mx/imagenes/nutrientesArboles/Imagen68.png"
-                    image2="http://puertadehierroac.mx/imagenes/nutrientesArboles/Imagen69.png"
-                    image3="http://puertadehierroac.mx/imagenes/nutrientesArboles/Imagen70.png"
-                    description="En el mes de junio se aplicaron nutrientes y fertilizantes a todos los árboles."
-                  />
-              </div> 
-
-
-              <div className="cardsRow-container">
-                  <AvancesCard
-                    title="PODAS A CASAS ABANDONADAS"
-                    date="2020"
-                    image="http://puertadehierroac.mx/imagenes/podaCasasAbandonadas/Imagen84.png"
-                    image2="http://puertadehierroac.mx/imagenes/podaCasasAbandonadas/Imagen85.png"
-                    image3="http://puertadehierroac.mx/imagenes/podaCasasAbandonadas/Imagen85.png"
-                    description="Se llevo a cabo la poda en casas abandonadas con cargo a sus cuotas de mantenimiento"
-                  />
-
-                  <AvancesCard
-                    title="MANTENIMIENTO A CAÑADAS - CESPED - CETOS - ARRIATES"
-                    date="2020"
-                    image="http://puertadehierroac.mx/imagenes/mttoCanadas/Imagen79.png"
-                    image2="http://puertadehierroac.mx/imagenes/mttoCanadas/Imagen80.png"
-                    image3="http://puertadehierroac.mx/imagenes/mttoCanadas/Imagen81.png"
-                    description="En la zona de las cañadas, se llevo a cabo trabajo de jardineria y mantenimiento"
-                  />
-              </div>                 
-            </div> 
-        </TabPanel>
-
-
-        <TabPanel value={value} index={3}>
-            <div className="obras-container">
-
-
-              <div className="cardsRow-container">
-                  <AvancesCard
-                    title="REPARACIÓN DE LOSAS DE CONCRETO"
-                    date="2020"
-                    image="http://puertadehierroac.mx/imagenes/losasConcreto/Imagen121.jpg"
-                    image2="http://puertadehierroac.mx/imagenes/losasConcreto/Imagen122.jpg"
-                    image3="http://puertadehierroac.mx/imagenes/losasConcreto/Imagen123.jpg"
-                    description="Sobre el boulevard se realizo la reparacion de algunas losas de concreto que se encontraban en mal estado "
-                  />
-
-                  <AvancesCard
-                    title="RESTAURACIÓN DE PIPA"
-                    date="2020"
-                    image="http://puertadehierroac.mx/imagenes/restPipa/Imagen107.jpg"
-                    image2="http://puertadehierroac.mx/imagenes/restPipa/Imagen108.png"
-                    image3="http://puertadehierroac.mx/imagenes/restPipa/Imagen108.png"
-                    description="Se renovo y restauro la pipa de agua"
-                  />
-              </div> 
-
-
-              <div className="cardsRow-container">
-                  <AvancesCard
-                    title="REPARACION DE BANQUETA DAÑADA"
-                    date="2020"
-                    image="http://puertadehierroac.mx/imagenes/reparacionBanqueta/Imagen150.png"
-                    image2="http://puertadehierroac.mx/imagenes/reparacionBanqueta/Imagen151.png"
-                    image3="http://puertadehierroac.mx/imagenes/reparacionBanqueta/Imagen152.png"
-                    description="La banqueta agrietada se termino de quitar y se coloco concreto nuevo "
-                  />
-
-                  <AvancesCard
-                    title="FUMIGACIÓN CONTRA EL DENGUE"
-                    date="2020"
-                    image="http://puertadehierroac.mx/imagenes/fumigacionDengue/Imagen86.png"
-                    image2="http://puertadehierroac.mx/imagenes/fumigacionDengue/Imagen87.png"
-                    image3="http://puertadehierroac.mx/imagenes/fumigacionDengue/Imagen88.png"
-                    description="En los meses de Agosto y Octubre se llevo a cabo una profunda fumigacion en contra del mosquito del dengue "
-                  />
-              </div> 
+              }
+              </div>
             </div>
-        </TabPanel>
-        <TabPanel value={value} index={4}>
+
+          </TabPanel>
+
+
+
+
+
+
+
+          <TabPanel value={value} index={2}>
             <div className="obras-container">
-                <div className="cardsRow-container">
 
 
-                    <AvancesCard
-                      title="ENTREGA DE UNIFORMES"
-                      date="2020"
-                      image="http://puertadehierroac.mx/imagenes/entregaUniformes/Imagen17.png"
-                      image2="http://puertadehierroac.mx/imagenes/entregaUniformes/Imagen18.png"
-                      image3="http://puertadehierroac.mx/imagenes/entregaUniformes/Imagen19.png"
-                      description="En compromiso con todos nuestros trabajadores se les hizo entrega de nuevos uniformes."
-                    />
-                </div> 
-            </div>     
-        </TabPanel>
+                                            
+              <div className="row">
+              {obrasJardineria.map(function(item){   
+                
+                return<AvancesCard
+                    title={item.titulo}
+                    date={item.fecha}
+                    image={item.imagen1}
+                    image2={item.imagen2}
+                    image3={item.imagen3}
+                    description={item.descripcion}
+                  />
+                  
+                }) 
+
+
+              }
+              </div>
+            </div>
+          </TabPanel>
+
+
+          <TabPanel value={value} index={3}>
+            <div className="obras-container">
+
+
+                                                        
+              <div className="row">
+              {obrasMantenimiento.map(function(item){   
+                
+                return<AvancesCard
+                    title={item.titulo}
+                    date={item.fecha}
+                    image={item.imagen1}
+                    image2={item.imagen2}
+                    image3={item.imagen3}
+                    description={item.descripcion}
+                  />
+                  
+                }) 
+
+
+              }
+              </div>
+            </div>
+          </TabPanel>
+
+
+          <TabPanel value={value} index={4}>
+            <div className="obras-container">
+
+
+                                                          
+              <div className="row">
+              {obrasAdministracion.map(function(item){   
+                
+                return<AvancesCard
+                    title={item.titulo}
+                    date={item.fecha}
+                    image={item.imagen1}
+                    image2={item.imagen2}
+                    image3={item.imagen3}
+                    description={item.descripcion}
+                  />
+                  
+                }) 
+
+
+              }
+              </div>
+            </div>
+    
+          </TabPanel>
+          </>
+
+
+        ):(
+          <h1>data no cargada</h1>
+        )}
+        </>
+
  
     </div>
   );

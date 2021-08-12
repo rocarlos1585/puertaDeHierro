@@ -201,6 +201,28 @@ class Galeria extends Component{
                 thumbnailHeight: 768,
                 caption: ""
             },
+            {
+                src: "http://puertadehierroac.mx/imagenes/galeria/26.JPG",
+                thumbnail: "http://puertadehierroac.mx/imagenes/galeria/26.JPG",
+                thumbnailWidth: 1024,
+                thumbnailHeight: 768,
+                caption: ""
+            },
+            {
+                src: "http://puertadehierroac.mx/imagenes/galeria/27.JPG",
+                thumbnail: "http://puertadehierroac.mx/imagenes/galeria/27.JPG",
+                thumbnailWidth: 1024,
+                thumbnailHeight: 768,
+                caption: ""
+            },
+            {
+                src: "http://puertadehierroac.mx/imagenes/galeria/28.JPG",
+                thumbnail: "http://puertadehierroac.mx/imagenes/galeria/28.JPG",
+                thumbnailWidth: 1024,
+                thumbnailHeight: 768,
+                caption: ""
+            },
+
         ]
         return(
             <div className="galeriaContainer">
